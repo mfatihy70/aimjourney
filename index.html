@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIM-Journey</title>
+    <!-- Tab Icon -->
+    <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="logo.png" alt="AIM-Journey Logo" class="logo" />
+        <h1 data-i18n="title">AIM-Journey</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="#" onclick="route('home')" data-i18n="nav_home">Home</a>
+          </li>
+          <li>
+            <a href="#" onclick="route('gallery')" data-i18n="nav_gallery"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="route('about')" data-i18n="nav_about">About</a>
+          </li>
+          <li>
+            <a href="#" onclick="route('quotes')" data-i18n="nav_quotes"
+              >Quotes</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <select id="language-selector" onchange="changeLanguage(this.value)">
+          <option value="en">EN</option>
+          <option value="tr">TR</option>
+          <option value="de">DE</option>
+          <option value="pl">PL</option>
+        </select>
+        <a
+          href="https://www.instagram.com/aimjourney.eu/"
+          target="_blank"
+          class="ig-link"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </header>
+
+    <main id="app-content"></main>
+
+    <footer>
+      <p>
+        &copy; 2026 AIM-Journey Project. Empowering Youth through Digital
+        Storytelling.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
