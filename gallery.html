@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIM Journey - Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .gallery-card img {
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <img src="logo.png" alt="AIM Journey Logo" class="logo" />
+        <span style="font-weight: bold; font-size: 1.2rem">AIM Journey</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="quotes.html" data-i18n="nav_quotes">Quotes</a>
+        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank">
+          <i
+            class="fab fa-instagram"
+            style="font-size: 1.5rem; color: #e1306c"
+          ></i>
+        </a>
+        <div class="lang-select">
+          <select id="lang-switcher" onchange="changeLanguage(this.value)">
+            <option value="en">EN</option>
+            <option value="tr">TR</option>
+            <option value="de">DE</option>
+            <option value="pl">PL</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2 data-i18n="gallery_title">Story Gallery</h2>
+      <div id="gallery-container" class="gallery-grid">
+        <!-- Cards injected via JS -->
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 AIM Journey Erasmus+ Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Specific logic for Gallery
+      const imageNumbers = [
+        1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 19, 20, 21, 23, 24, 25,
+        26, 27, 28, 29, 30, 31,
+      ];
+      const container = document.getElementById("gallery-container");
+
+      imageNumbers.forEach((num) => {
+        // Determine source: avatars or stories? Assuming mixed or specific.
+        // Prompt says "images from content/avatars and content/stories".
+        // We will try 'stories' first as it sounds more like a journey log,
+        // or you can adjust the path logic here.
+        // Let's assume 'stories' for the main image and 'avatars' for a thumbnail if needed.
+        // Based on prompt: "cards from images from content/avatars and content/stories"
+        // We will use 'stories' for the main card image for this example.
+
+        const imgPath = `content/stories/${num}.jpeg`;
+        const txtPath = `content/prompts/${num}.txt`;
+        const title = `AIM_Journey_${num}`;
+
+        const card = document.createElement("div");
+        card.className = "card gallery-card";
+
+        // Fallback image handling could be added here
+        card.innerHTML = `
+                <img src="${imgPath}" alt="${title}" onerror="this.src='content/avatars/${num}.jpeg'">
+                <div class="card-content">
+                    <div class="card-title">${title}</div>
+                    <p class="prompt-text" data-prompt-id="${num}">Loading description...</p>
+                </div>
+            `;
+        container.appendChild(card);
+
+        // Fetch text content
+        fetch(txtPath)
+          .then((response) => {
+            if (!response.ok) throw new Error("File not found");
+            return response.text();
+          })
+          .then((text) => {
+            const p = card.querySelector(".prompt-text");
+            p.textContent = text.trim();
+            // Store original text for translation logic if needed
+            p.dataset.original = text.trim();
+          })
+          .catch((err) => {
+            card.querySelector(".prompt-text").textContent =
+              "No description available.";
+          });
+      });
+    </script>
+  </body>
+</html>
