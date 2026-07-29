@@ -1,0 +1,68 @@
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #ff8c00;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.slider-wrapper {
+  position: relative;
+  height: 60%;
+  overflow: hidden;
+}
+.slider-track {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.4s ease-out;
+}
+.slider-track img {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+  background: #f0f0f0;
+}
+/* KEY FIX: object-fit: contain ensures full visibility */
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active {
+  background: white;
+  transform: scale(1.3);
+}
+
+.content {
+  padding: 15px;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+.text-content {
+  font-size: 0.85rem;
+  color: #666;
+  overflow-y: auto;
+  flex: 1;
+}

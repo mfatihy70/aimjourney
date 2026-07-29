@@ -4,31 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIM Journey</title>
-
-    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/pages/home.css" />
-    <link rel="stylesheet" href="css/pages/gallery.css" />
-    <link rel="stylesheet" href="css/pages/about.css" />
-    <link rel="stylesheet" href="css/pages/quotes.css" />
+    <style>
+      /* Global Reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #f9f9f9;
+        overflow-x: hidden;
+      }
+      main {
+        min-height: 80vh;
+      }
+    </style>
   </head>
   <body>
-    <!-- App Container -->
-    <div id="app">
-      <nav id="navbar"></nav>
-      <main id="main-content"></main>
-      <footer id="footer"></footer>
-    </div>
+    <app-navbar></app-navbar>
+    <main></main>
+    <app-footer></app-footer>
 
-    <!-- Main Module -->
-    <script type="module" src="js/main.js"></script>
+    <script type="module">
+      import { AppNavbar } from "./components/navbar/navbar.js";
+      import { AppFooter } from "./components/footer/footer.js"; 
+      import { HomePage } from "./pages/home/home.js";
+      import { GalleryPage } from "./pages/gallery/gallery.js";
+      import { AboutPage } from "./pages/about/about.js";
+      import { QuotesPage } from "./pages/quotes/quotes.js";
+      import { GalleryCard } from "./components/gallery-card/gallery-card.js";
+      import { QuoteCard } from "./components/quote-card/quote-card.js";
+      import "./js/app.js";
+    </script>
   </body>
 </html>
