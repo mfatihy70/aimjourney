@@ -9,116 +9,63 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <style>
-      .quote-card {
-        border-left: 5px solid var(--color-orange);
-        background: #fff;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 0 10px 10px 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-      .quote-day {
-        font-weight: bold;
-        color: var(--color-blue);
-        margin-bottom: 10px;
-        display: block;
-      }
-      .quote-text {
-        font-style: italic;
-        font-size: 1.1rem;
-      }
-      .quote-author {
-        margin-top: 15px;
-        font-weight: bold;
-        text-align: right;
-        color: #555;
-      }
-    </style>
   </head>
   <body>
     <nav>
       <div class="nav-left">
         <img src="logo.png" alt="AIM Journey Logo" class="logo" />
-        <span style="font-weight: bold; font-size: 1.2rem">AIM Journey</span>
+        <span class="nav-brand">AIM Journey</span>
       </div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
       <div class="nav-links">
-        <a href="index.html" data-i18n="nav_home">Home</a>
-        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
-        <a href="quotes.html" data-i18n="nav_quotes">Quotes</a>
-        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank">
-          <i
-            class="fab fa-instagram"
-            style="font-size: 1.5rem; color: #e1306c"
-          ></i>
-        </a>
-        <div class="lang-select">
-          <select id="lang-switcher" onchange="changeLanguage(this.value)">
-            <option value="en">EN</option>
-            <option value="tr">TR</option>
-            <option value="de">DE</option>
-            <option value="pl">PL</option>
-          </select>
-        </div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank"
+          ><i class="fab fa-instagram instagram-icon"></i
+        ></a>
       </div>
     </nav>
 
     <div class="container">
-      <h2 data-i18n="quotes_title">Participant Quotes</h2>
-      <div id="quotes-container">
+      <h2 class="animate-on-scroll">Participant Voices</h2>
+      <div id="quotes-container" class="quotes-grid">
         <!-- Days injected via JS -->
       </div>
     </div>
 
-    <footer>
-      <p>&copy; 2026 AIM Journey Erasmus+ Project</p>
-    </footer>
+    <footer><p>&copy; 2026 AIM Journey Erasmus+ Project</p></footer>
 
     <script src="script.js"></script>
+    <script src="content/quotes/quotes-data.js"></script>
     <script>
       const quotesContainer = document.getElementById("quotes-container");
-      const totalDays = 5;
+      const quoteData = window.quoteData || {};
 
-      for (let day = 1; day <= totalDays; day++) {
-        const daySection = document.createElement("div");
-        daySection.innerHTML = `<h3 style="margin: 20px 0 10px 0; color: var(--color-green);">Day ${day}</h3>`;
+      Object.keys(quoteData)
+        .sort((a, b) => Number(a) - Number(b))
+        .forEach((dayKey) => {
+          const day = Number(dayKey);
+          const quotes = quoteData[dayKey];
 
-        // We need to know how many participants per day.
-        // Assuming files are 1.txt, 2.txt etc inside content/quotes/day/
-        // We will try to load up to 20 participants per day as a safe guess,
-        // or you can adjust this limit.
+          const dayHeader = document.createElement("div");
+          dayHeader.style.gridColumn = "1 / -1";
+          dayHeader.style.marginTop = "20px";
+          dayHeader.innerHTML = `<h3 style="color:var(--color-blue); border-bottom:2px solid var(--color-orange); display:inline-block; padding-bottom:5px;">Day ${day}</h3>`;
+          quotesContainer.appendChild(dayHeader);
 
-        const dayGrid = document.createElement("div");
-        dayGrid.className = "grid-cards"; // Reusing grid style
-
-        // Attempt to load quotes for participants 1 through 30
-        const participantPromises = [];
-
-        for (let p = 1; p <= 30; p++) {
-          const filePath = `content/quotes/${day}/${p}.txt`;
-
-          const promise = fetch(filePath)
-            .then((res) => {
-              if (!res.ok) return null;
-              return res.text();
-            })
-            .then((text) => {
-              if (text) {
-                const quoteCard = document.createElement("div");
-                quoteCard.className = "quote-card";
-                quoteCard.innerHTML = `
-                                <span class="quote-text">"${text.trim()}"</span>
-                                <div class="quote-author">- AIM_Journey_${p}</div>
-                            `;
-                dayGrid.appendChild(quoteCard);
-              }
-            });
-          participantPromises.push(promise);
-        }
-
-        quotesContainer.appendChild(daySection);
-        quotesContainer.appendChild(dayGrid);
-      }
+          quotes.forEach((quote) => {
+            const quoteCard = document.createElement("div");
+            quoteCard.className = "quote-card animate-on-scroll";
+            quoteCard.innerHTML = `
+              <div class="quote-day">Day ${day}</div>
+              <div class="quote-text">"${quote.text.trim()}"</div>
+              <div class="quote-author">- AIM_Journey_${quote.participant}</div>
+            `;
+            quotesContainer.appendChild(quoteCard);
+          });
+        });
     </script>
   </body>
 </html>
