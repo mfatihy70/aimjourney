@@ -1,0 +1,92 @@
+nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  height: var(--nav-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.logo {
+  height: 45px;
+}
+.nav-brand {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--color-blue);
+}
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+.nav-links a {
+  font-weight: 600;
+  position: relative;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-blue), var(--color-orange));
+  transition: 0.3s;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.instagram-icon {
+  font-size: 1.4rem;
+  color: #e1306c;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--color-dark);
+}
+
+footer {
+  background: var(--color-dark);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 2rem 0;
+    transform: translateY(-150%);
+    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.active {
+    transform: translateY(0);
+  }
+}
