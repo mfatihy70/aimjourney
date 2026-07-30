@@ -19,7 +19,7 @@
       </div>
       <div class="hamburger"><span></span><span></span><span></span></div>
       <div class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="team.html">Team</a>
         <a href="activities.html">Activities</a>
         <a href="gallery.html">Gallery</a>
@@ -33,8 +33,9 @@
     <!-- Hero Section -->
     <header class="hero animate-on-scroll">
       <div class="hero-overlay">
+        <!-- Updated to new images folder -->
         <img
-          src="content/traincover.png"
+          src="content/images/traincover.png"
           alt="Train Journey Cover"
           class="hero-img"
         />
@@ -45,33 +46,48 @@
           Together for Tomorrow: Young Voices of Integration
         </p>
         <p class="hero-desc">
-          An Erasmus+ KA152 Youth Exchange project bringing together young
-          people from Austria and Poland to explore migration, identity,
-          inclusion, and Artificial Intelligence through creative digital
-          storytelling.
+          An Erasmus+ KA152 Youth Exchange project uniting young minds from
+          Austria and Poland. Together, we explore migration, identity, social
+          inclusion, and Artificial Intelligence through the powerful lens of
+          creative digital storytelling.
         </p>
       </div>
     </header>
 
     <div class="container">
-      <!-- Highlights -->
+      <!-- Highlights with Split Layout -->
       <section id="highlights" class="animate-on-scroll">
         <h2>Project Highlights</h2>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <i class="fas fa-flag"></i> Austria & Poland
+        <div class="section-flex">
+          <div class="flex-text">
+            <p
+              style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8"
+            >
+              AIM Journey isn't just an exchange—it's a transformative
+              experience. By bridging technology with human stories,
+              participants learn to leverage
+              <strong>Artificial Intelligence</strong> to express deeply
+              personal and cultural narratives. Through non-formal learning
+              methodologies, we break down borders and build a shared European
+              identity.
+            </p>
+            <div class="stats-grid" style="justify-content: flex-start">
+              <div class="stat-card">
+                <i class="fas fa-flag"></i> Austria & Poland
+              </div>
+              <div class="stat-card">
+                <i class="fas fa-users"></i> 24 Participants
+              </div>
+              <div class="stat-card">
+                <i class="fas fa-robot"></i> AI Integration
+              </div>
+            </div>
           </div>
-          <div class="stat-card">
-            <i class="fas fa-users"></i> 24 Participants
-          </div>
-          <div class="stat-card">
-            <i class="fas fa-robot"></i> Artificial Intelligence
-          </div>
-          <div class="stat-card">
-            <i class="fas fa-mobile-alt"></i> Digital Storytelling
-          </div>
-          <div class="stat-card">
-            <i class="fas fa-globe-europe"></i> Intercultural Learning
+          <div class="flex-img">
+            <img
+              src="content/images/identity_tree.png"
+              alt="Identity and Migration Tree"
+            />
           </div>
         </div>
       </section>
@@ -79,38 +95,93 @@
       <!-- Objectives -->
       <section id="objectives" class="animate-on-scroll">
         <h2>Project Objectives</h2>
+        <p
+          style="
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            font-size: 1.1rem;
+          "
+        >
+          Our core mission is to empower youth with future-proof skills while
+          fostering a deep sense of intercultural solidarity. We aim to equip
+          participants with both the technical know-how of tomorrow and the
+          ethical grounding needed for today.
+        </p>
         <div class="objectives-grid">
           <div class="obj-item">
-            <i class="fas fa-check-circle"></i> Digital Skills
+            <i class="fas fa-laptop-code"></i> Digital Skills
+            <p class="small-text">Mastering modern digital tools</p>
           </div>
           <div class="obj-item">
-            <i class="fas fa-check-circle"></i> AI Competences
+            <i class="fas fa-brain"></i> AI Competences
+            <p class="small-text">Ethical and creative use of AI</p>
           </div>
           <div class="obj-item">
-            <i class="fas fa-check-circle"></i> Social Inclusion
+            <i class="fas fa-hands-helping"></i> Social Inclusion
+            <p class="small-text">Bridging cultural divides</p>
           </div>
           <div class="obj-item">
-            <i class="fas fa-check-circle"></i> Creativity
+            <i class="fas fa-lightbulb"></i> Creativity
+            <p class="small-text">Expressing identity dynamically</p>
           </div>
           <div class="obj-item">
-            <i class="fas fa-check-circle"></i> Cultural Exchange
+            <i class="fas fa-globe"></i> Cultural Exchange
+            <p class="small-text">Sharing Austrian & Polish heritage</p>
           </div>
           <div class="obj-item">
-            <i class="fas fa-check-circle"></i> European Values
+            <i class="fas fa-star"></i> European Values
+            <p class="small-text">Promoting unity and democracy</p>
           </div>
         </div>
       </section>
 
-      <!-- Results -->
+      <!-- Results with Split Layout -->
       <section id="results" class="animate-on-scroll">
         <h2>Project Results</h2>
-        <ul class="results-list">
-          <li><i class="fas fa-camera"></i> 40+ Instagram Posts</li>
-          <li><i class="fas fa-images"></i> AI Photo Gallery</li>
-          <li><i class="fas fa-video"></i> AI Videos & Final Movie</li>
-          <li><i class="fas fa-certificate"></i> Youthpass Certificates</li>
-          <li><i class="fas fa-id-card"></i> Digital Identity Exhibition</li>
-        </ul>
+        <div class="section-flex reverse-mobile">
+          <div class="flex-img">
+            <img
+              src="content/images/phverein.jpg"
+              alt="Youth participants interacting"
+            />
+          </div>
+          <div class="flex-text">
+            <p
+              style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8"
+            >
+              The tangible outcomes of our journey reflect the hard work,
+              creativity, and collaboration of all 24 participants. From digital
+              exhibitions to certified competences, these results serve as a
+              lasting footprint of our European exchange.
+            </p>
+            <ul class="results-list">
+              <li>
+                <i class="fas fa-camera"></i>
+                <strong>40+ Instagram Posts</strong> showcasing daily insights
+              </li>
+              <li>
+                <i class="fas fa-images"></i>
+                <strong>AI Photo Gallery</strong> visualizing personal
+                identities
+              </li>
+              <li>
+                <i class="fas fa-video"></i> <strong>AI Video Stories</strong> &
+                a collaborative Final Movie
+              </li>
+              <li>
+                <i class="fas fa-certificate"></i>
+                <strong>Youthpass Certificates</strong> documenting key
+                competences
+              </li>
+              <li>
+                <i class="fas fa-id-card"></i>
+                <strong>Digital Identity Exhibition</strong> celebrating
+                diversity
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <!-- Erasmus+ Info Block -->
@@ -120,24 +191,43 @@
         style="
           text-align: center;
           background: #f0f4f8;
-          padding: 2rem;
+          padding: 3rem 2rem;
           border-radius: 15px;
         "
       >
         <img
-          src="https://commission.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg"
-          alt="EU Flag"
+          src="content/images/erasmus-plus-logo.jpg"
+          alt="Erasmus Plus Logo"
           style="
-            height: 50px;
-            margin-bottom: 1rem;
-            filter: brightness(0) saturate(100%);
+            height: auto;
+            max-width: 300px;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           "
         />
-        <h3>About Erasmus+</h3>
-        <p style="max-width: 800px; margin: 0 auto">
-          The Erasmus+ programme is the EU's programme to support education,
-          training, youth and sport in Europe. This project is co-funded by the
-          European Union.
+        <h3
+          style="
+            font-size: 1.8rem;
+            color: var(--color-blue);
+            margin-bottom: 1rem;
+          "
+        >
+          Empowered by Erasmus+
+        </h3>
+        <p
+          style="
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+          "
+        >
+          The Erasmus+ programme is the EU's flagship initiative to support
+          education, training, youth, and sport in Europe. This project is
+          proudly co-funded by the European Union, enabling young minds to
+          connect, create, and build a stronger, united future.
         </p>
       </section>
     </div>
@@ -147,7 +237,10 @@
         <p><strong>Project Number:</strong> 2026-1-AT01-KA152-YOU-XXXXXX</p>
         <p><strong>Project Period:</strong> 16–20 July 2026</p>
         <p><strong>Coordinator:</strong> Phönix in Niederösterreich</p>
-        <p><strong>Partner:</strong> Fast Solutions Sp. z o.o.</p>
+        <p>
+          <strong>Partners:</strong> Fast Solutions Sp. z o.o. | Fundacja
+          Mevlana
+        </p>
 
         <div class="erasmus-disclaimer">
           <p class="disclaimer-text">

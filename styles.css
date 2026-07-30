@@ -782,3 +782,108 @@ footer {
     font-size: 0.9rem;
   }
 }
+
+/* --- Added Flex Layouts for Home Page Expansion --- */
+.section-flex {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+.section-flex .flex-text {
+  flex: 1;
+}
+.section-flex .flex-img {
+  flex: 1;
+  text-align: center;
+}
+.section-flex .flex-img img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* --- Mentor Avatars Styling --- */
+.mentor-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  display: block;
+  border: 4px solid var(--color-blue);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Fancy Output Badges (Activities) --- */
+.output-badge {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-dark);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+}
+.output-badge i {
+  color: var(--color-orange);
+  font-size: 1.2rem;
+}
+.output-badge:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Taller Gallery Cards --- */
+.slider-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  height: 520px; /* INCREASED HEIGHT */
+  border-top: 5px solid var(--color-orange);
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 58%; /* Optimized image area proportion */
+  overflow: hidden;
+  flex-shrink: 0;
+  touch-action: pan-y; /* Crucial to allow vertical scroll while grabbing for horizontal swipe */
+}
+
+.slider-content {
+  padding: 18px;
+  height: 42%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+/* Responsive updates for Flex and Gallery */
+@media (max-width: 768px) {
+  .section-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .reverse-mobile {
+    flex-direction: column-reverse;
+  }
+  .slider-card {
+    height: 580px; /* EVEN TALLER on mobile to fit long stories comfortably */
+  }
+  .slider-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}

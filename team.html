@@ -19,7 +19,7 @@
       <div class="hamburger"><span></span><span></span><span></span></div>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="team.html">Team</a>
+        <a href="team.html" class="active">Team</a>
         <a href="activities.html">Activities</a>
         <a href="gallery.html">Gallery</a>
         <a href="quotes.html">Quotes</a>
@@ -30,14 +30,14 @@
     </nav>
 
     <div class="container">
-      <h2 class="animate-on-scroll">Our Team</h2>
+      <h2 class="animate-on-scroll">Our Core Team</h2>
 
       <!-- Organizations -->
       <div class="team-grid animate-on-scroll">
         <div class="team-card coordinator">
           <h3>Coordinator</h3>
           <img
-            src="content/phoenix_logo.png"
+            src="content/images/phlogo.png"
             alt="Phönix Logo"
             class="partner-logo"
             onerror="this.style.display = 'none'"
@@ -45,13 +45,14 @@
           <h4>Phönix in Niederösterreich</h4>
           <p>Austria</p>
           <p class="small-text">
-            Leading the project coordination and youth support.
+            Leading the project coordination, driving youth empowerment and
+            providing overarching pedagogical support.
           </p>
         </div>
         <div class="team-card partner">
           <h3>Partner</h3>
           <img
-            src="content/fast_logo.png"
+            src="content/images/fastsolutions.jpeg"
             alt="Fast Solutions Logo"
             class="partner-logo"
             onerror="this.style.display = 'none'"
@@ -59,7 +60,26 @@
           <h4>Fast Solutions Sp. z o.o.</h4>
           <p>Poland</p>
           <p class="small-text">
-            Providing technical expertise and local logistics.
+            Providing technical infrastructure, AI expertise, and seamless local
+            logistics in Warsaw.
+          </p>
+        </div>
+        <div
+          class="team-card partner"
+          style="border-top: 5px solid var(--color-orange)"
+        >
+          <h3>Partner</h3>
+          <img
+            src="content/images/mevlana.png"
+            alt="Fundacja Mevlana Logo"
+            class="partner-logo"
+            onerror="this.style.display = 'none'"
+          />
+          <h4>Fundacja Mevlana</h4>
+          <p>Poland</p>
+          <p class="small-text">
+            Fostering intercultural dialogue, cultural exchange, and deep
+            grassroots youth inclusion initiatives.
           </p>
         </div>
       </div>
@@ -67,39 +87,134 @@
       <!-- Mentors -->
       <h3
         class="animate-on-scroll"
-        style="margin-top: 3rem; text-align: center"
+        style="
+          margin-top: 4rem;
+          text-align: center;
+          font-size: 2rem;
+          color: var(--color-blue);
+        "
       >
-        Mentors
+        Our Expert Mentors
       </h3>
-      <div class="mentors-grid animate-on-scroll">
-        <!-- Add Mentor Cards Here -->
-        <div class="mentor-card">
-          <div class="mentor-img-placeholder"><i class="fas fa-user"></i></div>
-          <h4>Mentor Name</h4>
-          <p>Role / Expertise</p>
-        </div>
-        <div class="mentor-card">
-          <div class="mentor-img-placeholder"><i class="fas fa-user"></i></div>
-          <h4>Mentor Name</h4>
-          <p>Role / Expertise</p>
-        </div>
-        <!-- Duplicate as needed -->
-      </div>
-
-      <!-- Participants -->
-      <h3
-        class="animate-on-scroll"
-        style="margin-top: 3rem; text-align: center"
-      >
-        Participants
-      </h3>
-      <p class="text-center animate-on-scroll">
-        24 Young people from Austria and Poland
+      <p class="text-center animate-on-scroll" style="margin-bottom: 2rem">
+        Guiding our youth through technical challenges, storytelling, and
+        cultural integration.
       </p>
 
+      <div class="mentors-grid animate-on-scroll">
+        <!-- Mentor 1 -->
+        <div class="mentor-card">
+          <img
+            src="content/images/mentor1.jpg"
+            alt="Mentor 1"
+            class="mentor-img"
+            onerror="
+              this.src =
+                'https://ui-avatars.com/api/?name=Lead+Mentor&background=007bff&color=fff'
+            "
+          />
+          <h4>Mentor 1</h4>
+          <p>Project Coordinator</p>
+        </div>
+        <!-- Mentor 2 -->
+        <div class="mentor-card">
+          <img
+            src="content/images/mentor2.jpg"
+            alt="Mentor 2"
+            class="mentor-img"
+            onerror="
+              this.src =
+                'https://ui-avatars.com/api/?name=AI+Expert&background=28a745&color=fff'
+            "
+          />
+          <h4>Mentor 2</h4>
+          <p>AI & Ethics Expert</p>
+        </div>
+        <!-- Mentor 3 -->
+        <div class="mentor-card">
+          <img
+            src="content/images/mentor3.jpg"
+            alt="Mentor 3"
+            class="mentor-img"
+            onerror="
+              this.src =
+                'https://ui-avatars.com/api/?name=Story+Teller&background=6f42c1&color=fff'
+            "
+          />
+          <h4>Mentor 3</h4>
+          <p>Digital Storytelling</p>
+        </div>
+        <!-- Mentor 4 -->
+        <div class="mentor-card">
+          <img
+            src="content/images/mentor4.jpg"
+            alt="Mentor 4"
+            class="mentor-img"
+            onerror="
+              this.src =
+                'https://ui-avatars.com/api/?name=Youth+Coach&background=ff8c00&color=fff'
+            "
+          />
+          <h4>Mentor 4</h4>
+          <p>Youth Coach</p>
+        </div>
+        <!-- Mentor 5 -->
+        <div class="mentor-card">
+          <img
+            src="content/images/mentor5.jpg"
+            alt="Mentor 5"
+            class="mentor-img"
+            onerror="
+              this.src =
+                'https://ui-avatars.com/api/?name=Culture+Lead&background=007bff&color=fff'
+            "
+          />
+          <h4>Mentor 5</h4>
+          <p>Cultural Guide</p>
+        </div>
+        <!-- Mentor 6 -->
+        <div class="mentor-card">
+          <img
+            src="content/images/mentor6.jpg"
+            alt="Mentor 6"
+            class="mentor-img"
+            onerror="
+              this.src =
+                'https://ui-avatars.com/api/?name=Tech+Guru&background=28a745&color=fff'
+            "
+          />
+          <h4>Mentor 6</h4>
+          <p>Media Production</p>
+        </div>
+        <!-- Mentor 7 -->
+        <div class="mentor-card">
+          <img
+            src="content/images/mentor7.jpg"
+            alt="Mentor 7"
+            class="mentor-img"
+            onerror="
+              this.src =
+                'https://ui-avatars.com/api/?name=Logistics+Pro&background=6f42c1&color=fff'
+            "
+          />
+          <h4>Mentor 7</h4>
+          <p>Event Logistics</p>
+        </div>
+      </div>
 
+      <!-- Participants Link -->
+      <h3
+        class="animate-on-scroll"
+        style="margin-top: 4rem; text-align: center"
+      >
+        The Heart of the Project
+      </h3>
+      <p class="text-center animate-on-scroll">
+        24 brilliant young minds from Austria and Poland breaking boundaries and
+        building connections.
+      </p>
       <div class="text-center" style="margin-top: 2rem">
-        <a href="gallery.html" class="btn">View Full Gallery</a>
+        <a href="gallery.html" class="btn">Meet Them in the Gallery</a>
       </div>
     </div>
 
