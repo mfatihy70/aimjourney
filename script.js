@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hamburger) {
     hamburger.addEventListener("click", () => {
       navLinks.classList.toggle("active");
-      // Animate hamburger to X (optional CSS can be added)
     });
 
     // Close menu when clicking a link
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2. Scroll Animations
-  const observerOptions = { threshold: 0.1 };
+  const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -32,32 +31,22 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 
-  // 3. Gallery Slider Logic
-  const sliders = document.querySelectorAll(".slider-card");
+  // 3. Gallery Slider Logic (Delegated for dynamic content)
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("dot")) {
+      const card = e.target.closest(".slider-card");
+      if (!card) return;
 
-  sliders.forEach((card) => {
-    const track = card.querySelector(".slider-track");
-    const dots = card.querySelectorAll(".dot");
-    let currentIndex = 0;
+      const track = card.querySelector(".slider-track");
+      const dots = card.querySelectorAll(".dot");
+      const index = Array.from(dots).indexOf(e.target);
 
-    const updateSlide = (index) => {
-      track.style.transform = `translateX(-${index * 50}%)`;
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-    };
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        currentIndex = index;
-        updateSlide(currentIndex);
-      });
-    });
-
-    // Optional: Auto slide every 5 seconds
-    // setInterval(() => {
-    //     currentIndex = (currentIndex + 1) % 2;
-    //     updateSlide(currentIndex);
-    // }, 5000);
+      if (track && index !== -1) {
+        track.style.transform = `translateX(-${index * 50}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+      }
+    }
   });
 });

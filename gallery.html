@@ -13,32 +13,42 @@
   <body>
     <nav>
       <div class="nav-left">
-        <img src="logo.png" alt="AIM Journey Logo" class="logo" />
+        <img src="logo.png" alt="Project Logo" class="logo" />
         <span class="nav-brand">AIM Journey</span>
       </div>
       <div class="hamburger"><span></span><span></span><span></span></div>
       <div class="nav-links">
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="activities.html">Activities</a>
         <a href="gallery.html">Gallery</a>
-        <a href="quotes.html">Quotes</a>
-        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank"
-          ><i class="fab fa-instagram instagram-icon"></i
-        ></a>
+        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank">
+          <i class="fab fa-instagram instagram-icon"></i>
+        </a>
       </div>
     </nav>
 
     <div class="container">
       <h2 class="animate-on-scroll">Story Gallery</h2>
+      <p style="text-align: center; margin-bottom: 2rem">
+        Explore the AI Avatars and Stories created by our participants.
+      </p>
+
       <div id="gallery-container" class="gallery-grid">
         <!-- Cards injected via JS -->
       </div>
     </div>
 
-    <footer><p>&copy; 2026 AIM Journey Erasmus+ Project</p></footer>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2026 AIM Journey Erasmus+ Project</p>
+        <p class="disclaimer-text-small">Funded by the European Union.</p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
     <script>
+      // Dynamic Gallery Logic
       const imageNumbers = [
         1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 19, 20, 21, 23, 24, 25,
         26, 27, 28, 29, 30, 31,
@@ -49,39 +59,40 @@
         const avatarPath = `content/avatars/${num}.jpeg`;
         const storyPath = `content/stories/${num}.jpeg`;
         const txtPath = `content/prompts/${num}.txt`;
-        const title = `AIM_Journey_${num}`;
+        const title = `Participant ${num}`;
 
         const card = document.createElement("div");
         card.className = "slider-card animate-on-scroll";
-        card.style.transitionDelay = `${index * 0.05}s`; // Staggered animation
+        card.style.transitionDelay = `${index * 0.05}s`;
 
         card.innerHTML = `
-                <div class="slider-wrapper">
-                    <div class="slider-track">
-                        <img src="${avatarPath}" alt="Avatar ${num}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlZWUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Tm8gSW1hZ2U8L3RleHQ+PC9zdmc+'">
-                        <img src="${storyPath}" alt="Story ${num}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlZWUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Tm8gSW1hZ2U8L3RleHQ+PC9zdmc+'">
-                    </div>
-                    <div class="slider-controls">
-                        <div class="dot active"></div>
-                        <div class="dot"></div>
-                    </div>
-                </div>
-                <div class="slider-content">
-                    <div class="slider-title">${title}</div>
-                    <p class="slider-text">Loading story...</p>
-                </div>
-            `;
+          <div class="slider-wrapper">
+            <div class="slider-track">
+              <img src="${avatarPath}" alt="Avatar ${num}" loading="lazy">
+              <img src="${storyPath}" alt="Story ${num}" loading="lazy">
+            </div>
+            <div class="slider-controls">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="slider-content">
+            <div class="slider-title">${title}</div>
+            <p class="slider-text">Loading story...</p>
+          </div>
+        `;
         container.appendChild(card);
 
-        // Fetch text
+        // Fetch text content
         fetch(txtPath)
           .then((res) => (res.ok ? res.text() : "No description available."))
           .then((text) => {
-            card.querySelector(".slider-text").textContent = text.trim();
+            const textEl = card.querySelector(".slider-text");
+            if (textEl) textEl.textContent = text.trim();
           })
           .catch(() => {
-            card.querySelector(".slider-text").textContent =
-              "No description available.";
+            const textEl = card.querySelector(".slider-text");
+            if (textEl) textEl.textContent = "No description available.";
           });
       });
     </script>
