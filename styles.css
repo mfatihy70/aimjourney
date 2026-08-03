@@ -95,9 +95,9 @@ nav img.logo {
   text-decoration: none;
   color: var(--color-dark);
   font-weight: 600;
-  font-size: 0.9rem;
-  position: relative;
+  font-size: 1.2rem;
   transition: color 0.3s;
+  position: relative;
 }
 
 .nav-links a::after {
@@ -1106,5 +1106,57 @@ footer {
   .flex-img {
     order: -1;
     margin-bottom: 2rem;
+  }
+}
+
+/* Add this to styles.css */
+.erasmus-logo {
+  height: 50px; /* Slightly smaller than the main logo */
+  width: auto;
+  margin-right: 10px; /* Space between Erasmus logo and Site Logo */
+  object-fit: contain;
+}
+/* --- Desktop (Default: Row) --- */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Ensure logos are sized correctly */
+.erasmus-logo {
+  height: 50px;
+  width: auto;
+}
+
+nav img.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* --- Mobile (Stacked Vertically) --- */
+@media (max-width: 768px) {
+  .nav-left {
+    flex-direction: column; /* Stack everything vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Re-order for the stack: EU Logo -> Site Logo -> Text */
+
+  .erasmus-logo {
+    height: 40px; /* Smaller */
+    margin-bottom: 20px;
+  }
+
+  nav img.logo {
+    height: 60px;
+    margin-top: 20px;
+  }
+
+  .nav-brand {
+    font-size: 1.2rem;
+    margin-top: 2px;
   }
 }
