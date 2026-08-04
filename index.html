@@ -328,17 +328,19 @@
           border-radius: 15px;
         "
       >
-        <img
-          src="content/images/erasmus-plus-logo.jpg"
-          alt="Erasmus Plus Logo"
-          style="
-            height: auto;
-            max-width: 300px;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          "
-        />
+        <a href="https://erasmus-plus.ec.europa.eu/" target="_blank">
+          <img
+            src="content/images/erasmus-plus-logo.jpg"
+            alt="Erasmus Plus Logo"
+            style="
+              height: auto;
+              max-width: 300px;
+              margin-bottom: 1.5rem;
+              border-radius: 8px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            "
+          />
+        </a>
         <h3
           style="
             font-size: 1.8rem;
@@ -364,16 +366,45 @@
       </section>
     </div>
 
+    <!-- Footer with Legal & Partners -->
     <footer>
-      <div class="erasmus-disclaimer">
-        <p class="disclaimer-text">
-          Funded by the European Union. Views and opinions expressed are those
-          of the author(s) only and do not necessarily reflect those of the
-          European Union or the National Agency. Neither the European Union nor
-          the granting authority can be held responsible for them.
-        </p>
+      <div class="footer-content">
+        <!-- Legal Text Blocks (Hidden by default or shown as accordion in real implementation, shown here for content) -->
+        <div
+          class="legal-text"
+          style="
+            font-size: 0.8rem;
+            color: #aaa;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+          "
+        >
+          <p id="privacy">
+            <strong>Privacy Policy:</strong> We respect your privacy. Data is
+            processed securely for communication and project activities only.
+            Never shared without consent.
+          </p>
+          <p id="gdpr">
+            <strong>GDPR Compliance:</strong> In accordance with (EU) 2016/679.
+            You have the right to access, correct, or delete your data.
+          </p>
+          <p id="imprint">
+            <strong>Imprint:</strong> AIM Journey – AI and the Migration
+            Journey. Coord: Phönix in Niederösterreich. Partner: Fundacja
+            Mevlana. Web: www.aim-journey.eu | Email: aimjourney@phoenixnoe.at
+          </p>
+        </div>
+
+        <div class="erasmus-disclaimer">
+          <p class="disclaimer-text">
+            Funded by the European Union. Views and opinions expressed are those
+            of the author(s) only and do not necessarily reflect those of the
+            European Union or the National Agency.
+          </p>
+        </div>
+        <p class="copyright">&copy; 2026 AIM Journey</p>
       </div>
-      <p class="copyright">&copy; 2026 AIM Journey Erasmus+ Project</p>
     </footer>
     <script src="script.js"></script>
   </body>

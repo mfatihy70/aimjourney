@@ -324,12 +324,12 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 .team-card {
   background: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -1032,12 +1032,12 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 .leader-card {
   background: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -1069,7 +1069,7 @@ footer {
 
 .country-group {
   background: #f9f9f9;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 15px;
 }
 
