@@ -7,10 +7,16 @@ class AppNavbar extends HTMLElement {
     const currentPage = this.getAttribute("page") || "home";
     this.innerHTML = `
       <nav class="navbar">
-        <div class="flex-center gap-3">
-          <img src="logo.png" alt="AIM Journey Logo" class="logo" />
-          <span class="brand">AIM Journey</span>
-          <img src="content/images/fundedbyeu.jpg" alt="EU" class="eu-logo" />
+        <div class="nav-left">
+          <a href="index.html">
+            <img src="logo.png" alt="AIM Journey Logo" class="logo" />
+          </a>          
+          <a href="index.html">
+            <span class="brand">AIM Journey</span>
+          </a>
+          <a href="https://ec.europa.eu/programmes/erasmus-plus/" target="_blank">
+            <img src="content/images/fundedbyeu.jpg" alt="EU" class="eu-logo" />
+          </a>  
         </div>
         <button class="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>

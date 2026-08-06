@@ -12,7 +12,7 @@ class OrganizationCard extends HTMLElement {
     const url = this.getAttribute("url") || "#";
 
     this.innerHTML = `
-      <a href="${url}" target="_blank" style="text-decoration:none;color:inherit;">
+      <a href="${url}" target="_blank" style="text-decoration:none;color:inherit;display:block;height:100%;">
         <div class="org-card">
           <div class="label ${type}">${type === "coordinator" ? "Coordinator" : "Partner"}</div>
           ${logo ? `<img src="${logo}" alt="${name} Logo" />` : ""}
