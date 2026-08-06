@@ -4,138 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIM Journey - Gallery</title>
-    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="dist/output.css" />
   </head>
   <body>
-    <nav>
-      <div class="nav-left">
-        <img src="logo.png" alt="Project Logo" class="logo" />
-        <span class="nav-brand">AIM Journey</span>
-        <img
-          src="content/images/fundedbyeu.jpg"
-          alt="Co-funded by the European Union"
-          class="erasmus-logo"
-        />
-      </div>
-      <div class="hamburger"><span></span><span></span><span></span></div>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="activities.html">Activities</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="quotes.html">Quotes</a>
-        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank">
-          <i class="fab fa-instagram instagram-icon"></i>
-        </a>
-      </div>
-    </nav>
+    <app-navbar page="gallery"></app-navbar>
 
-    <div class="container">
+    <div class="container-custom">
       <h2 class="animate-on-scroll">Story Gallery</h2>
-      <p style="text-align: center; margin-bottom: 2rem">
+      <p class="text-center text-gray-600 mb-6">
         Explore the AI Avatars and Stories created by our participants.
       </p>
-
-      <div id="gallery-container" class="gallery-grid">
+      <div
+        id="gallery-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+      >
         <!-- Cards injected via JS -->
       </div>
     </div>
 
-    <!-- Footer with Legal & Partners -->
-    <footer>
-      <div class="footer-content">
-          <!-- Legal Links -->
-        <!-- Legal Text Blocks (Hidden by default or shown as accordion in real implementation, shown here for content) -->
-        <div
-          class="legal-text"
-          style="
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-          "
-        >
-          <p id="privacy">
-            <strong>Privacy Policy:</strong> We respect your privacy. Data is
-            processed securely for communication and project activities only.
-            Never shared without consent.
-          </p>
-          <p id="gdpr">
-            <strong>GDPR Compliance:</strong> In accordance with (EU) 2016/679.
-            You have the right to access, correct, or delete your data.
-          </p>
-          <p id="imprint">
-            <strong>Imprint:</strong> AIM Journey – AI and the Migration
-            Journey. Coord: Phönix in Niederösterreich. Partner: Fundacja
-            Mevlana. Web: www.aim-journey.eu | Email: aimjourney@phoenixnoe.at
-          </p>
-        </div>
+    <app-footer></app-footer>
 
-        <div class="erasmus-disclaimer">
-          <p class="disclaimer-text">
-            Funded by the European Union. Views and opinions expressed are those
-            of the author(s) only and do not necessarily reflect those of the
-            European Union or the National Agency.
-          </p>
-        </div>
-        <p class="copyright">&copy; 2026 AIM Journey</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="components/Navbar.js"></script>
+    <script src="components/Footer.js"></script>
+    <script src="components/GalleryCard.js"></script>
     <script>
-      // Dynamic Gallery Logic
-      const imageNumbers = [
-        1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 19, 20, 21, 23, 24, 25,
-        26, 27, 28, 29, 30, 31,
-      ];
-      const container = document.getElementById("gallery-container");
+      document.addEventListener("DOMContentLoaded", () => {
+        const imageNumbers = [
+          1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 19, 20, 21, 23, 24,
+          25, 26, 27, 28, 29, 30, 31,
+        ];
+        const container = document.getElementById("gallery-container");
 
-      imageNumbers.forEach((num, index) => {
-        const avatarPath = `content/avatars/${num}.jpeg`;
-        const storyPath = `content/stories/${num}.jpeg`;
-        const txtPath = `content/prompts/${num}.txt`;
-        const title = `Participant ${num}`;
+        imageNumbers.forEach((num, index) => {
+          const card = document.createElement("gallery-card");
+          card.setAttribute("num", num);
+          card.setAttribute("title", `Participant ${num}`);
+          card.className = `animate-on-scroll`;
+          card.style.transitionDelay = `${index * 0.05}s`;
+          container.appendChild(card);
+        });
 
-        const card = document.createElement("div");
-        card.className = "slider-card animate-on-scroll";
-        card.style.transitionDelay = `${index * 0.05}s`;
-
-        card.innerHTML = `
-          <div class="slider-wrapper">
-            <div class="slider-track">
-              <img src="${avatarPath}" alt="Avatar ${num}" loading="lazy">
-              <img src="${storyPath}" alt="Story ${num}" loading="lazy">
-            </div>
-            <div class="slider-controls">
-              <div class="dot active"></div>
-              <div class="dot"></div>
-            </div>
-          </div>
-          <div class="slider-content">
-            <div class="slider-title">${title}</div>
-            <p class="slider-text">Loading story...</p>
-          </div>
-        `;
-        container.appendChild(card);
-
-        // Fetch text content
-        fetch(txtPath)
-          .then((res) => (res.ok ? res.text() : "No description available."))
-          .then((text) => {
-            const textEl = card.querySelector(".slider-text");
-            if (textEl) textEl.textContent = text.trim();
-          })
-          .catch(() => {
-            const textEl = card.querySelector(".slider-text");
-            if (textEl) textEl.textContent = "No description available.";
-          });
+        // Observer for animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        document
+          .querySelectorAll(".animate-on-scroll")
+          .forEach((el) => observer.observe(el));
       });
     </script>
   </body>

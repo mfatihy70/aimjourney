@@ -4,261 +4,158 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIM Journey - About Us</title>
-    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="dist/output.css" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-left">
-        <img src="logo.png" alt="AIM Journey Logo" class="logo" />
-        <span class="nav-brand">AIM Journey</span>
-                <img
-          src="content/images/fundedbyeu.jpg"
-          alt="Co-funded by the European Union"
-          class="erasmus-logo"
-        />
-      </div>
-      <div class="hamburger"><span></span><span></span><span></span></div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="activities.html">Activities</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="quotes.html">Quotes</a>
-        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank"
-          ><i class="fab fa-instagram instagram-icon"></i
-        ></a>
-      </div>
-    </nav>
+    <app-navbar page="about"></app-navbar>
 
-    <div class="container">
-            <!-- Organizations -->
-      <section class="animate-on-scroll" style="margin-top: 4rem">
-        <h2>Supporting Organizations</h2>
-        <div class="team-grid">
-          <!-- Phönix -->
-          <a href="https://www.phoenixnoe.at" target="_blank" style="text-decoration: none; color: inherit">
-          <div class="team-card coordinator">
-            <h3>Coordinator</h3>
-              <img
-                src="content/images/phlogo.png"
-                alt="Phönix Logo"
-                class="partner-logo"
-                onerror="this.style.display = 'none'"
-              />
-              <h4>Phönix in Niederösterreich</h4>
-              <p>Austria</p>
-              <p class="small-text">
-                Leading the project coordination, driving youth empowerment and
-                providing overarching pedagogical support.
-              </p>
-            </div>
-          </a>
+    <div class="container-custom">
+      <h2 class="mt-8">About Us</h2>
 
-          <!-- Fundacja Mevlana -->
-          <a href="https://fundacjamevlana.pl" target="_blank" style="text-decoration: none; color: inherit">
-          <div
-            class="team-card partner"
-            style="border-top-color: var(--color-orange)"
+      <!-- Organizations -->
+      <section class="section-spacing animate-on-scroll">
+        <h3 class="text-center text-2xl font-bold text-aim-dark mb-6">
+          Supporting Organizations
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <organization-card
+            type="coordinator"
+            name="Phönix in Niederösterreich"
+            country="Austria"
+            desc="Leading the project coordination, driving youth empowerment and providing overarching pedagogical support."
+            logo="content/images/phlogo.png"
+            url="https://www.phoenixnoe.at"
           >
-            <h3>Partner</h3>
-              <img
-                src="content/images/mevlana.png"
-                alt="Fundacja Mevlana Logo"
-                class="partner-logo"
-                onerror="this.style.display = 'none'"
-              />
-              <h4>Fundacja Mevlana</h4>
-              <p>Poland</p>
-              <p class="small-text">
-                Fostering intercultural dialogue, cultural exchange, and deep
-                grassroots youth inclusion initiatives.
-              </p>
-            </div>
-          </a>
+          </organization-card>
+          <organization-card
+            type="partner"
+            name="Fundacja Mevlana"
+            country="Poland"
+            desc="Fostering intercultural dialogue, cultural exchange, and deep grassroots youth inclusion initiatives."
+            logo="content/images/mevlana.png"
+            url="https://fundacjamevlana.pl"
+          >
+          </organization-card>
         </div>
       </section>
 
-      <!-- Leadership Section -->
-      <section class="animate-on-scroll">
-        <h2>Project Leadership</h2>
-        <div class="leadership-grid">
-          <div class="leader-card">
-            <div class="leader-icon"><i class="fas fa-gavel"></i></div>
-            <h3>Ömer YILMAZ</h3>
-            <p class="role">Project Legal Responsible</p>
-          </div>
-          <div class="leader-card">
-            <div class="leader-icon"><i class="fas fa-user-tie"></i></div>
-            <h3>Özgür GÜNEY</h3>
-            <p class="role">Project Coordinator</p>
-          </div>
+      <!-- Leadership -->
+      <section class="section-spacing animate-on-scroll">
+        <h3 class="text-center text-2xl font-bold text-aim-dark mb-6">
+          Project Leadership
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <leader-card
+            name="Ömer YILMAZ"
+            role="Project Legal Responsible"
+            icon="fa-gavel"
+          ></leader-card>
+          <leader-card
+            name="Özgür GÜNEY"
+            role="Project Coordinator"
+            icon="fa-user-tie"
+          ></leader-card>
         </div>
       </section>
 
       <!-- Mentors -->
-      <section class="animate-on-scroll" style="margin-top: 4rem">
-        <h2>Our Expert Mentors</h2>
-        <p class="text-center" style="margin-bottom: 2rem">
+      <section class="section-spacing animate-on-scroll">
+        <h3 class="text-center text-2xl font-bold text-aim-dark mb-4">
+          Our Expert Mentors
+        </h3>
+        <p class="text-center text-gray-600 mb-6">
           Guiding our youth through technical challenges, storytelling, and
           cultural integration.
         </p>
 
-        <div class="mentors-grid">
-          <!-- Austria Mentors -->
-          <div class="country-group">
-            <h3
-              style="
-                text-align: center;
-                color: var(--color-blue);
-                margin-bottom: 1rem;
-              "
-            >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Austria -->
+          <div class="bg-gray-50 p-4 md:p-6 rounded-2xl">
+            <h4 class="text-center text-xl font-bold text-aim-blue mb-4">
               🇦🇹 Austria
-            </h3>
-            <div class="mentor-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem;">
-              <!-- Add Austria Mentor Cards Here -->
-              <div class="mentor-card">
-              <img
-                src="content/images/mentor_at_1.jpg"
-                alt="Mentor"
-                class="mentor-img"
-                onerror="
-                  this.src =
-                    'https://ui-avatars.com/api/?name=AT+Mentor&background=007bff&color=fff'
-                "
-              />
-              <h4>Mentor 1</h4>
-              <p>AI Ethics Facilitator</p>
-            </div>
-            <div class="mentor-card">
-              <img
-                src="content/images/mentor_at_2.jpg"
-                alt="Mentor"
-                class="mentor-img"
-                onerror="
-                  this.src =
-                    'https://ui-avatars.com/api/?name=AT+Mentor&background=007bff&color=fff'
-                "
-              />
-              <h4>Mentor 2</h4>
-              <p>Digital Inclusion Strategist</p>
-            </div>
-            <div class="mentor-card">
-              <img
-                src="content/images/mentor_at_3.jpg"
-                alt="Mentor"
-                class="mentor-img"
-                onerror="
-                  this.src =
-                    'https://ui-avatars.com/api/?name=AT+Mentor&background=007bff&color=fff'
-                "
-              />
-              <h4>Mentor 3</h4>
-              <p>Youth Leadership Coach</p>
-            </div>
-            <div class="mentor-card">
-              <img
-                src="content/images/mentor_at_4.jpg"
-                alt="Mentor"
-                class="mentor-img"
-                onerror="
-                  this.src =
-                    'https://ui-avatars.com/api/?name=AT+Mentor&background=007bff&color=fff'
-                "
-              />
-              <h4>Mentor 4</h4>
-              <p>Innovation Workshop Facilitator</p>
+            </h4>
+            <div class="grid grid-cols-2 gap-3">
+              <mentor-card
+                name="Mentor 1"
+                role="AI Ethics Facilitator"
+                fallback="M1"
+                bg="aim-blue"
+              ></mentor-card>
+              <mentor-card
+                name="Mentor 2"
+                role="Digital Inclusion Strategist"
+                fallback="M2"
+                bg="aim-blue"
+              ></mentor-card>
+              <mentor-card
+                name="Mentor 3"
+                role="Youth Leadership Coach"
+                fallback="M3"
+                bg="aim-blue"
+              ></mentor-card>
+              <mentor-card
+                name="Mentor 4"
+                role="Innovation Workshop Facilitator"
+                fallback="M4"
+                bg="aim-blue"
+              ></mentor-card>
             </div>
           </div>
-        </div>
-
-          <!-- Poland Mentors -->
-          <div class="country-group">
-            <h3
-              style="
-                text-align: center;
-                color: var(--color-orange);
-                margin-bottom: 1rem;
-              "
-            >
+          <!-- Poland -->
+          <div class="bg-gray-50 p-4 md:p-6 rounded-2xl">
+            <h4 class="text-center text-xl font-bold text-aim-orange mb-4">
               🇵🇱 Poland
-            </h3>
-            <div class="mentor-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem;">
-              <!-- Add Poland Mentor Cards Here -->
-              <div class="mentor-card">
-              <img
-                src="content/images/mentor_pl_1.jpg"
-                alt="Mentor"
-                class="mentor-img"
-                onerror="
-                  this.src =
-                    'https://ui-avatars.com/api/?name=PL+Mentor&background=ff8c00&color=fff'
-                "
-              />
-              <h4>Mentor 5</h4>
-              <p>Community Engagement Lead</p>
-            </div>
-            <div class="mentor-card">
-              <img
-                src="content/images/mentor_pl_2.jpg"
-                alt="Mentor"
-                class="mentor-img"
-                onerror="
-                  this.src =
-                    'https://ui-avatars.com/api/?name=PL+Mentor&background=ff8c00&color=fff'
-                "
-              />
-              <h4>Mentor 6</h4>
-              <p>Digital Storytelling Mentor</p>
-            </div>
-            <div class="mentor-card">
-              <img
-                src="content/images/mentor_pl_3.jpg"
-                alt="Mentor"
-                class="mentor-img"
-                onerror="
-                  this.src =
-                    'https://ui-avatars.com/api/?name=PL+Mentor&background=ff8c00&color=fff'
-                "
-              />
-              <h4>Mentor 7</h4>
-              <p>Cross-Cultural Learning Coach</p>
+            </h4>
+            <div class="grid grid-cols-2 gap-3">
+              <mentor-card
+                name="Mentor 5"
+                role="Community Engagement Lead"
+                fallback="M5"
+                bg="aim-orange"
+              ></mentor-card>
+              <mentor-card
+                name="Mentor 6"
+                role="Digital Storytelling Mentor"
+                fallback="M6"
+                bg="aim-orange"
+              ></mentor-card>
+              <mentor-card
+                name="Mentor 7"
+                role="Cross-Cultural Learning Coach"
+                fallback="M7"
+                bg="aim-orange"
+              ></mentor-card>
             </div>
           </div>
         </div>
 
+        <div class="text-center mt-6">
+          <p class="italic text-gray-600">
+            <em>Plus 24 Brilliant Young Participants</em>
+          </p>
+          <a href="gallery.html" class="btn-primary inline-block mt-3"
+            >Meet the Participants</a
+          >
+        </div>
       </section>
-      <div class="text-center" style="margin-top: 2rem">
-        <p><em>Plus 24 Brilliant Young Participants</em></p>
-        <a href="gallery.html" class="btn" style="margin-top: 1rem"
-          >Meet the Participants</a
-        >
-      </div>
 
-      <!-- Sustainability Section -->
+      <!-- Sustainability -->
       <section
-        class="animate-on-scroll"
-        style="
-          margin-top: 5rem;
-          background: #f0f8ff;
-          padding: 3rem;
-          border-radius: 20px;
-          border-left: 6px solid var(--color-green);
-        "
+        class="animate-on-scroll bg-blue-50 p-6 md:p-12 rounded-2xl border-l-4 border-aim-green my-8"
       >
-        <h2 style="text-align: left; margin-bottom: 1.5rem">
-          <i class="fas fa-seedling"></i> The Fruits of Our Labor
+        <h2 class="text-left flex items-center gap-3">
+          <i class="fas fa-seedling text-aim-green text-2xl"></i> The Fruits of
+          Our Labor
         </h2>
-        <h3 style="color: var(--color-green); margin-bottom: 1rem">
+        <h3 class="text-xl md:text-2xl font-bold text-aim-green mb-3">
           Sustainability
         </h3>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: #444">
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed">
           AIM Journey is more than a youth exchange, it is the beginning of a
           long-term learning journey. The knowledge, experiences and project
           outputs will continue to be shared through local presentations,
@@ -268,111 +165,95 @@
         </p>
       </section>
 
-      <!-- Contact / Collaboration Section -->
-      <section class="animate-on-scroll" style="margin-top: 5rem">
+      <!-- Contact -->
+      <section class="section-spacing animate-on-scroll">
         <h2>Let's Build the Future Together</h2>
-        <div class="section-flex reverse-mobile">
-          <div class="flex-text">
-            <p style="margin-bottom: 1rem; line-height: 1.8">
+        <div
+          class="flex flex-col md:flex-row items-center gap-6 md:gap-12 mt-6"
+        >
+          <div class="flex-1">
+            <p class="mb-3 leading-relaxed">
               At AIM Journey, we believe that meaningful change is created
               through cooperation, innovation and shared experiences. Whether
               you are a youth organisation, educational institution, NGO, public
               authority or an individual interested in Erasmus+ projects, we
               welcome new partnerships and opportunities for collaboration.
             </p>
-            <p style="margin-bottom: 1.5rem; line-height: 1.8">
+            <p class="mb-4 leading-relaxed">
               Together, we can develop innovative youth initiatives, promote
               responsible Artificial Intelligence, strengthen digital skills and
               create new international learning experiences for young people
               across Europe.
             </p>
-
-            <div
-              class="contact-box"
-              style="
-                background: white;
-                padding: 2rem;
-                border-radius: 15px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-              "
-            >
-              <h4 style="color: var(--color-blue); margin-bottom: 1rem">
+            <div class="bg-white p-4 md:p-8 rounded-2xl card-shadow">
+              <h4 class="text-lg md:text-xl font-bold text-aim-blue mb-3">
                 Get in Touch
               </h4>
-              <p>
-                <i class="fas fa-envelope"></i>
+              <p class="mb-2">
+                <i class="fas fa-envelope text-aim-orange w-5"></i>
                 <strong>Email:</strong>
-                <a href="mailto:aimjourney@phoenixnoe.at">aimjourney@phoenixnoe.at</a>
+                <a
+                  href="mailto:aimjourney@phoenixnoe.at"
+                  class="text-aim-blue hover:underline"
+                  >aimjourney@phoenixnoe.at</a
+                >
               </p>
-              <br />
-              <p>
-                <i class="fas fa-phone"></i>
+              <p class="mb-2">
+                <i class="fas fa-phone text-aim-orange w-5"></i>
                 <strong>Tel:</strong>
-                <a href="tel:+436767806575">+43 676 7806575</a>
+                <a
+                  href="tel:+436767806575"
+                  class="text-aim-blue hover:underline"
+                  >+43 676 7806575</a
+                >
               </p>
-              <br />
               <p>
-                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-map-marker-alt text-aim-orange w-5"></i>
                 <strong>Address:</strong>
-                <a href="https://www.google.com/maps/search/?api=1&query=Haidbrunngasse+34a,+2700+Wiener+Neustadt,+Austria" target="_blank" rel="noopener">Haidbrunngasse 34a, 2700 Wiener Neustadt, Austria</a>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Haidbrunngasse+34a,+2700+Wiener+Neustadt,+Austria"
+                  target="_blank"
+                  class="text-aim-blue hover:underline"
+                  >Haidbrunngasse 34a, 2700 Wiener Neustadt, Austria</a
+                >
               </p>
             </div>
           </div>
-          <div class="flex-img">
+          <div class="flex-1">
             <img
               src="content/images/handshake.png"
               alt="Collaboration"
-              style="
-                border-radius: 15px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-              "
-              onerror=""
+              class="w-full rounded-2xl card-shadow"
             />
           </div>
         </div>
       </section>
     </div>
 
-    <!-- Footer with Legal & Partners -->
-    <footer>
-      <div class="footer-content">
-        <!-- Legal Links -->       <!-- Legal Text Blocks (Hidden by default or shown as accordion in real implementation, shown here for content) -->
-        <div
-          class="legal-text"
-          style="
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-          "
-        >
-          <p id="privacy">
-            <strong>Privacy Policy:</strong> We respect your privacy. Data is
-            processed securely for communication and project activities only.
-            Never shared without consent.
-          </p>
-          <p id="gdpr">
-            <strong>GDPR Compliance:</strong> In accordance with (EU) 2016/679.
-            You have the right to access, correct, or delete your data.
-          </p>
-          <p id="imprint">
-            <strong>Imprint:</strong> AIM Journey – AI and the Migration
-            Journey. Coord: Phönix in Niederösterreich. Partner: Fundacja
-            Mevlana. Web: www.aim-journey.eu | Email: aimjourney@phoenixnoe.at
-          </p>
-        </div>
+    <app-footer></app-footer>
 
-        <div class="erasmus-disclaimer">
-          <p class="disclaimer-text">
-            Funded by the European Union. Views and opinions expressed are those
-            of the author(s) only and do not necessarily reflect those of the
-            European Union or the National Agency.
-          </p>
-        </div>
-        <p class="copyright">&copy; 2026 AIM Journey</p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+    <script src="components/Navbar.js"></script>
+    <script src="components/Footer.js"></script>
+    <script src="components/OrganizationCard.js"></script>
+    <script src="components/LeaderCard.js"></script>
+    <script src="components/MentorCard.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        document
+          .querySelectorAll(".animate-on-scroll")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
   </body>
 </html>

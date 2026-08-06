@@ -4,114 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIM Journey - Quotes</title>
-    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="dist/output.css" />
   </head>
   <body>
-    <nav>
-      <div class="nav-left">
-        <img src="logo.png" alt="AIM Journey Logo" class="logo" />
-        <span class="nav-brand">AIM Journey</span>
-        <img
-          src="content/images/fundedbyeu.jpg"
-          alt="Co-funded by the European Union"
-          class="erasmus-logo"
-        />
-      </div>
-      <div class="hamburger"><span></span><span></span><span></span></div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="activities.html">Activities</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="quotes.html">Quotes</a>
-        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank"
-          ><i class="fab fa-instagram instagram-icon"></i
-        ></a>
-      </div>
-    </nav>
+    <app-navbar page="quotes"></app-navbar>
 
-    <div class="container">
+    <div class="container-custom">
       <h2 class="animate-on-scroll">Participant Voices</h2>
-      <div id="quotes-container" class="quotes-grid">
-        <!-- Days injected via JS -->
+      <div
+        id="quotes-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+      >
+        <!-- Quotes injected via JS -->
       </div>
     </div>
 
-    <!-- Footer with Legal & Partners -->
-    <footer>
-      <div class="footer-content">
-          <!-- Legal Links -->
-        <!-- Legal Text Blocks (Hidden by default or shown as accordion in real implementation, shown here for content) -->
-        <div
-          class="legal-text"
-          style="
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-          "
-        >
-          <p id="privacy">
-            <strong>Privacy Policy:</strong> We respect your privacy. Data is
-            processed securely for communication and project activities only.
-            Never shared without consent.
-          </p>
-          <p id="gdpr">
-            <strong>GDPR Compliance:</strong> In accordance with (EU) 2016/679.
-            You have the right to access, correct, or delete your data.
-          </p>
-          <p id="imprint">
-            <strong>Imprint:</strong> AIM Journey – AI and the Migration
-            Journey. Coord: Phönix in Niederösterreich. Partner: Fundacja
-            Mevlana. Web: www.aim-journey.eu | Email: aimjourney@phoenixnoe.at
-          </p>
-        </div>
+    <app-footer></app-footer>
 
-        <div class="erasmus-disclaimer">
-          <p class="disclaimer-text">
-            Funded by the European Union. Views and opinions expressed are those
-            of the author(s) only and do not necessarily reflect those of the
-            European Union or the National Agency.
-          </p>
-        </div>
-        <p class="copyright">&copy; 2026 AIM Journey</p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+    <script src="components/Navbar.js"></script>
+    <script src="components/Footer.js"></script>
+    <script src="components/QuoteCard.js"></script>
     <script src="content/quotes/quotes-data.js"></script>
     <script>
-      const quotesContainer = document.getElementById("quotes-container");
-      const quoteData = window.quoteData || {};
+      document.addEventListener("DOMContentLoaded", () => {
+        const quotesContainer = document.getElementById("quotes-container");
+        const quoteData = window.quoteData || {};
 
-      Object.keys(quoteData)
-        .sort((a, b) => Number(a) - Number(b))
-        .forEach((dayKey) => {
-          const day = Number(dayKey);
-          const quotes = quoteData[dayKey];
+        Object.keys(quoteData)
+          .sort((a, b) => Number(a) - Number(b))
+          .forEach((dayKey) => {
+            const day = Number(dayKey);
+            const quotes = quoteData[dayKey];
 
-          const dayHeader = document.createElement("div");
-          dayHeader.style.gridColumn = "1 / -1";
-          dayHeader.style.marginTop = "20px";
-          dayHeader.innerHTML = `<h3 style="color:var(--color-blue); border-bottom:2px solid var(--color-orange); display:inline-block; padding-bottom:5px;">Day ${day}</h3>`;
-          quotesContainer.appendChild(dayHeader);
+            const dayHeader = document.createElement("div");
+            dayHeader.className = "col-span-full mt-4";
+            dayHeader.innerHTML = `<h3 class="text-xl md:text-2xl font-bold text-aim-blue border-b-2 border-aim-orange inline-block pb-2">Day ${day}</h3>`;
+            quotesContainer.appendChild(dayHeader);
 
-          quotes.forEach((quote) => {
-            const quoteCard = document.createElement("div");
-            quoteCard.className = "quote-card animate-on-scroll";
-            quoteCard.innerHTML = `
-              <div class="quote-day">Day ${day}</div>
-              <div class="quote-text">"${quote.text.trim()}"</div>
-              <div class="quote-author">- AIM_Journey_${quote.participant}</div>
-            `;
-            quotesContainer.appendChild(quoteCard);
+            quotes.forEach((quote) => {
+              const card = document.createElement("quote-card");
+              card.setAttribute("day", day);
+              card.setAttribute("text", quote.text.trim());
+              card.setAttribute("author", `AIM_Journey_${quote.participant}`);
+              card.className = "animate-on-scroll";
+              quotesContainer.appendChild(card);
+            });
           });
-        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        document
+          .querySelectorAll(".animate-on-scroll")
+          .forEach((el) => observer.observe(el));
+      });
     </script>
   </body>
 </html>

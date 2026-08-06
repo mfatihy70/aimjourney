@@ -4,392 +4,257 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIM Journey - Home</title>
-    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="dist/output.css" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-left">
-        <img src="logo.png" alt="AIM Journey Logo" class="logo" />
-        <span class="nav-brand">AIM Journey</span>
-        <img
-          src="content/images/fundedbyeu.jpg"
-          alt="Co-funded by the European Union"
-          class="erasmus-logo"
-        />
-      </div>
-      <div class="hamburger"><span></span><span></span><span></span></div>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="activities.html">Activities</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="quotes.html">Quotes</a>
-        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank"
-          ><i class="fab fa-instagram instagram-icon"></i
-        ></a>
-      </div>
-    </nav>
+    <app-navbar page="home"></app-navbar>
+    <app-hero
+      title="AIM Journey"
+      subtitle="Together for Tomorrow: Young Voices of Integration"
+      desc="An Erasmus+ KA152 Youth Exchange project uniting young minds from Austria and Poland to explore AI, migration, and digital storytelling."
+      img="content/images/train.png"
+    >
+    </app-hero>
 
-    <!-- Hero Section -->
-    <header class="hero animate-on-scroll">
-      <div class="hero-overlay">
-        <img
-          src="content/images/train.png"
-          alt="Train Journey Cover"
-          class="hero-img"
-        />
-      </div>
-      <div class="hero-content">
-        <h1>AIM Journey</h1>
-        <p class="subtitle">
-          Together for Tomorrow: Young Voices of Integration
-        </p>
-        <p class="hero-desc">
-          An Erasmus+ KA152 Youth Exchange project uniting young minds from
-          Austria and Poland to explore AI, migration, and digital storytelling.
-        </p>
-      </div>
-    </header>
-
-    <div class="container">
-      <!-- Introduction Section -->
-      <section id="intro" class="animate-on-scroll">
-        <div class="section-flex">
-          <div class="flex-text">
-            <h2>About AIM Journey</h2>
-            <p style="margin-bottom: 1rem; line-height: 1.8">
+    <div class="container-custom">
+      <!-- About Section -->
+      <section class="section-spacing animate-on-scroll">
+        <div
+          class="flex flex-col md:flex-row items-center gap-6 md:gap-12 mt-6"
+        >
+          <div class="flex-1">
+            <h2 class="text-left">About AIM Journey</h2>
+            <p class="mb-3 leading-relaxed">
               AIM Journey is an Erasmus+ Youth Exchange project that brings
               together young people from Austria and Poland to explore the
               opportunities and challenges of Artificial Intelligence in today's
               digital world.
             </p>
-            <p style="margin-bottom: 1rem; line-height: 1.8">
+            <p class="mb-3 leading-relaxed">
               The project combines AI, migration, digital storytelling,
               intercultural learning and active citizenship, encouraging
               participants to develop digital competences while promoting
               ethical AI use, inclusion and European values.
             </p>
-            <p style="margin-bottom: 1rem; line-height: 1.8">
+            <p class="mb-3 leading-relaxed">
               Through workshops, interactive activities, cultural exchange,
               local visits and collaborative learning, participants strengthen
-              their critical thinking, creativity and teamwork skills. They also
-              gain practical experience in responsible technology use and create
-              digital stories reflecting their perspectives and experiences.
+              their critical thinking, creativity and teamwork skills.
             </p>
-            <p style="font-weight: 600">
+            <p class="font-semibold">
               AIM Journey aims to empower young people to become responsible
               digital citizens who contribute to a more inclusive, innovative
               and connected Europe.
             </p>
           </div>
-          <div class="flex-img">
+          <div class="flex-1">
             <img
               src="content/images/identity_tree.png"
               alt="Identity and Migration Tree"
-              style="
-                border-radius: 15px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-              "
+              class="w-full max-w-lg rounded-2xl card-shadow mx-auto"
             />
           </div>
         </div>
       </section>
 
-      <!-- Project Info Cards (3x3 Grid) -->
-      <section id="project-info" class="animate-on-scroll">
+      <!-- Project Info Grid -->
+      <section class="section-spacing animate-on-scroll">
         <h2>Project Information</h2>
-        <div class="info-grid-3x3">
-          <!-- Row 1 -->
-          <div class="info-card">
-            <i class="fas fa-file-contract"></i>
-            <h4>Project Number</h4>
-            <p>2026-1-AT01-KA152-YOU-000399142</p>
-          </div>
-          <div class="info-card">
-            <i class="fas fa-calendar-alt"></i>
-            <h4>Duration</h4>
-            <p>01.06.2026 – 31.01.2027<br />(8 Months)</p>
-          </div>
-          <div class="info-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <h4>Mobility Activity</h4>
-            <p>16–20 July 2026<br />Warsaw, Poland</p>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="info-card">
-            <i class="fas fa-users"></i>
-            <h4>Participants</h4>
-            <p>24 Young People<br />+ 7 Mentors</p>
-          </div>
-          <div class="info-card">
-            <i class="fas fa-globe-europe"></i>
-            <h4>Countries</h4>
-            <p>Austria 🇦🇹 & Poland 🇵🇱</p>
-          </div>
-          <div class="info-card">
-            <i class="fas fa-handshake"></i>
-            <h4>Partners</h4>
-            <p>Phönix in Niederösterreich<br />Fundacja Mevlana</p>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="info-card">
-            <i class="fas fa-bullseye"></i>
-            <h4>Theme</h4>
-            <p>AI & Migration Journey</p>
-          </div>
-          <div class="info-card">
-            <i class="fas fa-laptop"></i>
-            <h4>Website</h4>
-            <p>aim-journey.eu</p>
-          </div>
-          <div class="info-card">
-            <i class="fab fa-instagram"></i>
-            <h4>Instagram</h4>
-            <p>@aimjourney.eu</p>
-          </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6"
+        >
+          <info-card
+            icon="fa-file-contract"
+            title="Project Number"
+            content="2026-1-AT01-KA152-YOU-000399142"
+          ></info-card>
+          <info-card
+            icon="fa-calendar-alt"
+            title="Duration"
+            content="01.06.2026 – 31.01.2027<br />(8 Months)"
+          ></info-card>
+          <info-card
+            icon="fa-map-marker-alt"
+            title="Mobility Activity"
+            content="16–20 July 2026<br />Warsaw, Poland"
+          ></info-card>
+          <info-card
+            icon="fa-users"
+            title="Participants"
+            content="24 Young People<br />+ 7 Mentors"
+          ></info-card>
+          <info-card
+            icon="fa-globe-europe"
+            title="Countries"
+            content="Austria 🇦🇹 &amp; Poland 🇵🇱"
+          ></info-card>
+          <info-card
+            icon="fa-handshake"
+            title="Partners"
+            content="Phönix in Niederösterreich<br />Fundacja Mevlana"
+          ></info-card>
+          <info-card
+            icon="fa-bullseye"
+            title="Theme"
+            content="AI &amp; Migration Journey"
+          ></info-card>
+          <info-card
+            icon="fa-laptop"
+            title="Website"
+            content="aim-journey.eu"
+          ></info-card>
+          <info-card
+            icon="fa-instagram"
+            title="Instagram"
+            content="@aimjourney.eu"
+          ></info-card>
         </div>
       </section>
 
-      <!-- Objectives Section -->
-      <section id="objectives" class="animate-on-scroll">
+      <!-- Objectives -->
+      <section class="section-spacing animate-on-scroll">
         <h2>Project Objectives</h2>
-        <p
-          style="
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-            font-size: 1.1rem;
-          "
-        >
+        <p class="text-center max-w-2xl mx-auto text-base md:text-lg mb-6">
           Empowering Young People Through Artificial Intelligence and
           Intercultural Learning. Our mission is to equip youth with the
           knowledge and skills needed to navigate an increasingly digital world.
         </p>
-
-        <div class="objectives-grid-equal">
-          <div class="obj-card-equal">
-            <div class="icon-box"><i class="fas fa-robot"></i></div>
-            <h4>Promote Responsible AI</h4>
-            <p class="small-text">
-              Increase understanding of AI and encourage its ethical, safe, and
-              responsible use in everyday life.
-            </p>
-          </div>
-
-          <div class="obj-card-equal">
-            <div class="icon-box"><i class="fas fa-globe"></i></div>
-            <h4>Strengthen Intercultural Dialogue</h4>
-            <p class="small-text">
-              Bring together youth from different backgrounds to encourage
-              mutual understanding and respect.
-            </p>
-          </div>
-
-          <div class="obj-card-equal">
-            <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
-            <h4>Develop Digital Competences</h4>
-            <p class="small-text">
-              Improve digital literacy, storytelling, media literacy, and
-              responsible use of digital tools.
-            </p>
-          </div>
-
-          <div class="obj-card-equal">
-            <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-            <h4>Raise Awareness of Digital Security</h4>
-            <p class="small-text">
-              Understand online safety, privacy protection, and secure digital
-              practices.
-            </p>
-          </div>
-
-          <div class="obj-card-equal">
-            <div class="icon-box"><i class="fas fa-heart"></i></div>
-            <h4>Encourage Inclusion and Diversity</h4>
-            <p class="small-text">
-              Promote equal opportunities and social inclusion by exploring
-              migration experiences.
-            </p>
-          </div>
-
-          <div class="obj-card-equal">
-            <div class="icon-box"><i class="fas fa-comments"></i></div>
-            <h4>Improve Communication & Teamwork</h4>
-            <p class="small-text">
-              Strengthen leadership and teamwork skills through collaborative
-              workshops.
-            </p>
-          </div>
-
-          <div class="obj-card-equal">
-            <div class="icon-box"><i class="fas fa-seedling"></i></div>
-            <h4>Support Active Citizenship</h4>
-            <p class="small-text">
-              Inspire youth to become active community members through civic
-              engagement.
-            </p>
-          </div>
-
-          <div class="obj-card-equal">
-            <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
-            <h4>Disseminate Project Results</h4>
-            <p class="small-text">
-              Share outcomes and materials with wider communities to ensure
-              long-term impact.
-            </p>
-          </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+        >
+          <objective-card
+            icon="fa-robot"
+            title="Promote Responsible AI"
+            desc="Increase understanding of AI and encourage its ethical, safe, and responsible use in everyday life."
+          ></objective-card>
+          <objective-card
+            icon="fa-globe"
+            title="Strengthen Intercultural Dialogue"
+            desc="Bring together youth from different backgrounds to encourage mutual understanding and respect."
+          ></objective-card>
+          <objective-card
+            icon="fa-laptop-code"
+            title="Develop Digital Competences"
+            desc="Improve digital literacy, storytelling, media literacy, and responsible use of digital tools."
+          ></objective-card>
+          <objective-card
+            icon="fa-shield-alt"
+            title="Raise Awareness of Digital Security"
+            desc="Understand online safety, privacy protection, and secure digital practices."
+          ></objective-card>
+          <objective-card
+            icon="fa-heart"
+            title="Encourage Inclusion and Diversity"
+            desc="Promote equal opportunities and social inclusion by exploring migration experiences."
+          ></objective-card>
+          <objective-card
+            icon="fa-comments"
+            title="Improve Communication &amp; Teamwork"
+            desc="Strengthen leadership and teamwork skills through collaborative workshops."
+          ></objective-card>
+          <objective-card
+            icon="fa-seedling"
+            title="Support Active Citizenship"
+            desc="Inspire youth to become active community members through civic engagement."
+          ></objective-card>
+          <objective-card
+            icon="fa-bullhorn"
+            title="Disseminate Project Results"
+            desc="Share outcomes and materials with wider communities to ensure long-term impact."
+          ></objective-card>
         </div>
       </section>
 
-      <!-- Vision & Slogan Section -->
+      <!-- Vision -->
       <section
-        id="vision"
-        class="animate-on-scroll"
-        style="
-          background: linear-gradient(
-            135deg,
-            var(--color-blue),
-            var(--color-purple)
-          );
-          color: white;
-          padding: 3rem;
-          border-radius: 20px;
-          text-align: center;
-          margin: 4rem 0;
-        "
+        class="animate-on-scroll rounded-3xl p-6 md:p-12 text-white text-center bg-gradient-to-br from-aim-blue to-aim-purple my-8 md:my-12"
       >
         <h2
-          style="
-            color: white;
-            -webkit-text-fill-color: white;
-            margin-bottom: 1.5rem;
-          "
+          class="text-white [&amp;]:text-white [&amp;]:[-webkit-text-fill-color:white]"
         >
           Our Vision
         </h2>
-        <p
-          style="
-            max-width: 900px;
-            margin: 0 auto 2rem auto;
-            font-size: 1.2rem;
-            line-height: 1.6;
-          "
-        >
+        <p class="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
           To empower young people to use Artificial Intelligence ethically,
           embrace cultural diversity, strengthen digital competences and become
           active European citizens who contribute to a more inclusive,
           innovative and sustainable future.
         </p>
-
-        <div
-          style="
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            padding-top: 2rem;
-          "
-        >
-          <i
-            class="fas fa-quote-left"
-            style="font-size: 2rem; opacity: 0.7; margin-bottom: 1rem"
-          ></i>
-          <h3
-            style="
-              font-size: 1.8rem;
-              font-style: italic;
-              font-weight: 300;
-              color: white;
-            "
-          >
+        <div class="mt-8 pt-8 border-t border-white/30">
+          <i class="fas fa-quote-left text-3xl opacity-70 mb-3"></i>
+          <h3 class="text-2xl md:text-3xl font-light italic">
             "Connecting People, Empowering Minds, Shaping the Future with AI."
           </h3>
-          <i
-            class="fas fa-quote-right"
-            style="font-size: 2rem; opacity: 0.7; margin-top: 1rem"
-          ></i>
+          <i class="fas fa-quote-right text-3xl opacity-70 mt-3"></i>
         </div>
       </section>
 
-      <!-- Logo Explanation Section -->
-      <section id="logo-meaning" class="animate-on-scroll">
-        <div class="logo-inner">
-          <div class="logo-column">
-            <img src="logo.png" alt="AIM Journey Logo" class="logo-img" />
-            <p class="logo-caption">AIM Journey logo</p>
-          </div>
-
-          <div class="logo-text">
-            <h3>Why this logo?</h3>
-            <p>
-              AIM stands for <strong>AI</strong> and <strong>Migration</strong>,
-              and at the same time evokes the word "aim", a direction and
-              intention. The blue, orange and green flying birds at the top
-              represent people with different backgrounds and perspectives, each
-              taking flight on their own part of the journey.
-            </p>
-            <p>
-              The arrows below symbolise a shared path, the common human and
-              ethical values we hope to highlight and walk together. The three
-              small dots at the bottom capture hesitation: people's reflections
-              of <em>yesterday</em>, <em>today</em> and <em>tomorrow</em> as
-              they move forward.
-            </p>
-            <p class="logo-summary">
-              In short, the logo brings together technology, migration and human
-              values — a visual anchor for the AIM Journey project's mission.
-            </p>
+      <!-- Logo Meaning -->
+      <section class="section-spacing animate-on-scroll">
+        <div class="bg-white p-4 md:p-8 rounded-2xl card-shadow">
+          <div
+            class="flex flex-col md:flex-row items-center gap-4 md:gap-6 max-w-4xl mx-auto"
+          >
+            <div class="text-center flex-shrink-0">
+              <img
+                src="logo.png"
+                alt="AIM Journey Logo"
+                class="max-w-[150px] md:max-w-[200px] w-full rounded-lg card-shadow"
+              />
+              <p class="text-xs md:text-sm text-gray-500 mt-2">
+                AIM Journey logo
+              </p>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl md:text-2xl font-bold text-aim-blue">
+                Why this logo?
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-2">
+                AIM stands for <strong>AI</strong> and
+                <strong>Migration</strong>, and at the same time evokes the word
+                "aim", a direction and intention. The blue, orange and green
+                flying birds at the top represent people with different
+                backgrounds and perspectives, each taking flight on their own
+                part of the journey.
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-2">
+                The arrows below symbolise a shared path, the common human and
+                ethical values we hope to highlight and walk together. The three
+                small dots at the bottom capture hesitation: people's
+                reflections of <em>yesterday</em>, <em>today</em> and
+                <em>tomorrow</em> as they move forward.
+              </p>
+              <p class="text-gray-600 font-medium">
+                In short, the logo brings together technology, migration and
+                human values — a visual anchor for the AIM Journey project's
+                mission.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Erasmus+ Info Block -->
+      <!-- Erasmus+ Info -->
       <section
-        id="erasmus-info"
-        class="animate-on-scroll"
-        style="
-          text-align: center;
-          background: #f0f4f8;
-          padding: 3rem 2rem;
-          border-radius: 15px;
-        "
+        class="animate-on-scroll text-center bg-gray-100 p-6 md:p-12 rounded-2xl"
       >
         <a href="https://erasmus-plus.ec.europa.eu/" target="_blank">
           <img
             src="content/images/erasmus-plus-logo.jpg"
             alt="Erasmus Plus Logo"
-            style="
-              height: auto;
-              max-width: 300px;
-              margin-bottom: 1.5rem;
-              border-radius: 8px;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            "
+            class="max-w-[200px] md:max-w-[300px] mx-auto mb-4 rounded-lg shadow-md"
           />
         </a>
-        <h3
-          style="
-            font-size: 1.8rem;
-            color: var(--color-blue);
-            margin-bottom: 1rem;
-          "
-        >
+        <h3 class="text-2xl md:text-3xl font-bold text-aim-blue mb-3">
           Empowered by Erasmus+
         </h3>
         <p
-          style="
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #555;
-          "
+          class="max-w-2xl mx-auto text-base md:text-lg text-gray-600 leading-relaxed"
         >
           The Erasmus+ programme is the EU's flagship initiative to support
           education, training, youth, and sport in Europe. This project is
@@ -398,46 +263,32 @@
       </section>
     </div>
 
-    <!-- Footer with Legal & Partners -->
-    <footer>
-      <div class="footer-content">
-        <!-- Legal Text Blocks (Hidden by default or shown as accordion in real implementation, shown here for content) -->
-        <div
-          class="legal-text"
-          style="
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-          "
-        >
-          <p id="privacy">
-            <strong>Privacy Policy:</strong> We respect your privacy. Data is
-            processed securely for communication and project activities only.
-            Never shared without consent.
-          </p>
-          <p id="gdpr">
-            <strong>GDPR Compliance:</strong> In accordance with (EU) 2016/679.
-            You have the right to access, correct, or delete your data.
-          </p>
-          <p id="imprint">
-            <strong>Imprint:</strong> AIM Journey – AI and the Migration
-            Journey. Coord: Phönix in Niederösterreich. Partner: Fundacja
-            Mevlana. Web: www.aim-journey.eu | Email: aimjourney@phoenixnoe.at
-          </p>
-        </div>
+    <app-footer></app-footer>
 
-        <div class="erasmus-disclaimer">
-          <p class="disclaimer-text">
-            Funded by the European Union. Views and opinions expressed are those
-            of the author(s) only and do not necessarily reflect those of the
-            European Union or the National Agency.
-          </p>
-        </div>
-        <p class="copyright">&copy; 2026 AIM Journey</p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+    <script>
+      // Intersection Observer for scroll animations
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+
+        document
+          .querySelectorAll(".animate-on-scroll")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script src="components/Navbar.js"></script>
+    <script src="components/Footer.js"></script>
+    <script src="components/Hero.js"></script>
+    <script src="components/InfoCard.js"></script>
+    <script src="components/ObjectiveCard.js"></script>
   </body>
 </html>

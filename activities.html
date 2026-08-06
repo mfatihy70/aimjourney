@@ -4,71 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIM Journey - Activities</title>
-    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="dist/output.css" />
   </head>
   <body>
-    <nav>
-      <div class="nav-left">
-        <img src="logo.png" alt="AIM Journey Logo" class="logo" />
-        <span class="nav-brand">AIM Journey</span>
-        <img
-          src="content/images/fundedbyeu.jpg"
-          alt="Co-funded by the European Union"
-          class="erasmus-logo"
-        />
-      </div>
-      <div class="hamburger"><span></span><span></span><span></span></div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="activities.html" class="active">Activities</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="quotes.html">Quotes</a>
-        <a href="https://www.instagram.com/aimjourney.eu/" target="_blank"
-          ><i class="fab fa-instagram instagram-icon"></i
-        ></a>
-      </div>
-    </nav>
+    <app-navbar page="activities"></app-navbar>
 
-    <div class="container">
+    <div class="container-custom">
       <h2 class="animate-on-scroll">Our 5-Day Adventure</h2>
       <p
-        class="text-center animate-on-scroll"
-        style="margin-bottom: 3rem; font-size: 1.1rem"
+        class="text-center text-base md:text-lg max-w-2xl mx-auto mb-8 animate-on-scroll"
       >
         A thrilling, immersive journey of non-formal learning, digital
         creativity, and vibrant cultural exchange in the heart of Warsaw.
       </p>
 
-      <div class="timeline">
+      <div class="max-w-3xl mx-auto">
         <!-- Day 1 -->
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-day">Day 1</div>
-          <div class="timeline-content">
-            <h3>Arrival & Breaking the Ice</h3>
-            <ul>
-              <li>
+        <div
+          class="flex flex-col md:flex-row gap-4 md:gap-6 mb-6 animate-on-scroll"
+        >
+          <div
+            class="w-16 h-16 md:w-[80px] md:h-[80px] bg-aim-blue text-white rounded-full flex items-center justify-center font-bold text-xs md:text-sm text-center leading-tight flex-shrink-0 mx-auto md:mx-0"
+          >
+            Day 1
+          </div>
+          <div class="bg-white p-4 md:p-6 rounded-2xl card-shadow flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-aim-blue mb-3">
+              Arrival &amp; Breaking the Ice
+            </h3>
+            <ul class="list-none pl-0 space-y-2">
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Touchdown in Warsaw:</strong> Participants arrive and
                 settle into our creative hub.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Welcome Breakfast:</strong> A warm Austrian-Polish
                 morning gathering.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Setting the Stage:</strong> Visionary welcome speech and
                 project roadmap.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>"Knowing Each Other":</strong> High-energy interactive
                 ice-breakers and team building.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Twilight City Stroll:</strong> First magical glimpses of
                 the Polish capital.
               </li>
@@ -77,25 +73,41 @@
         </div>
 
         <!-- Day 2 -->
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-day">Day 2</div>
-          <div class="timeline-content">
-            <h3>Digital Identity & AI Innovations</h3>
-            <ul>
-              <li>
+        <div
+          class="flex flex-col md:flex-row gap-4 md:gap-6 mb-6 animate-on-scroll"
+        >
+          <div
+            class="w-16 h-16 md:w-[80px] md:h-[80px] bg-aim-blue text-white rounded-full flex items-center justify-center font-bold text-xs md:text-sm text-center leading-tight flex-shrink-0 mx-auto md:mx-0"
+          >
+            Day 2
+          </div>
+          <div class="bg-white p-4 md:p-6 rounded-2xl card-shadow flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-aim-blue mb-3">
+              Digital Identity &amp; AI Innovations
+            </h3>
+            <ul class="list-none pl-0 space-y-2">
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Morning Briefing:</strong> Unlocking the potential of
                 digital storytelling.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Masterclass Workshop:</strong> Designing personal AI
-                Digital Avatars & crafting their core narratives.
+                Digital Avatars &amp; crafting their core narratives.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Expert Keynote:</strong> A fascinating seminar on the
                 future of science and AI by our esteemed Chemical Engineering
                 Professor.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Evening Exploration:</strong> Free time to bond and
                 explore Warsaw's local culture.
               </li>
@@ -104,24 +116,40 @@
         </div>
 
         <!-- Day 3 -->
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-day">Day 3</div>
-          <div class="timeline-content">
-            <h3>Visual Storytelling & Deep History</h3>
-            <ul>
-              <li>
+        <div
+          class="flex flex-col md:flex-row gap-4 md:gap-6 mb-6 animate-on-scroll"
+        >
+          <div
+            class="w-16 h-16 md:w-[80px] md:h-[80px] bg-aim-blue text-white rounded-full flex items-center justify-center font-bold text-xs md:text-sm text-center leading-tight flex-shrink-0 mx-auto md:mx-0"
+          >
+            Day 3
+          </div>
+          <div class="bg-white p-4 md:p-6 rounded-2xl card-shadow flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-aim-blue mb-3">
+              Visual Storytelling &amp; Deep History
+            </h3>
+            <ul class="list-none pl-0 space-y-2">
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Creative Kickoff:</strong> Transforming avatars into
                 dynamic motion.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Action Workshop:</strong> Directing and generating
                 compelling AI Video Stories.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Journey through Time:</strong> An emotional and
                 educational visit to the Dialog Center.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Old Town Wonders:</strong> Guided immersive tour through
                 Warsaw's historic, cobblestoned heart.
               </li>
@@ -130,28 +158,46 @@
         </div>
 
         <!-- Day 4 -->
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-day">Day 4</div>
-          <div class="timeline-content">
-            <h3>Ethics, Community & Celebration</h3>
-            <ul>
-              <li>
+        <div
+          class="flex flex-col md:flex-row gap-4 md:gap-6 mb-6 animate-on-scroll"
+        >
+          <div
+            class="w-16 h-16 md:w-[80px] md:h-[80px] bg-aim-blue text-white rounded-full flex items-center justify-center font-bold text-xs md:text-sm text-center leading-tight flex-shrink-0 mx-auto md:mx-0"
+          >
+            Day 4
+          </div>
+          <div class="bg-white p-4 md:p-6 rounded-2xl card-shadow flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-aim-blue mb-3">
+              Ethics, Community &amp; Celebration
+            </h3>
+            <ul class="list-none pl-0 space-y-2">
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Digital Privacy Dive:</strong> Crucial presentations on
                 AI Awareness and ethical tech boundaries.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>The Ultimate Challenge:</strong> A fiercely fun and
                 interactive Kahoot Quiz tournament.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Visionary Seminar:</strong> A deep dive into Ethics and
                 forward-thinking leadership.
               </li>
-              <li>
-                <strong>Retail & Culture:</strong> Exploring modern Warsaw and
-                local shopping centers.
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
+                <strong>Retail &amp; Culture:</strong> Exploring modern Warsaw
+                and local shopping centers.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Grand Finale:</strong> Cheering together in a unified
                 viewing of the World Cup Final!
               </li>
@@ -160,28 +206,46 @@
         </div>
 
         <!-- Day 5 -->
-        <div class="timeline-item animate-on-scroll">
-          <div class="timeline-day">Day 5</div>
-          <div class="timeline-content">
-            <h3>Reflections & Future Horizons</h3>
-            <ul>
-              <li>
+        <div
+          class="flex flex-col md:flex-row gap-4 md:gap-6 mb-6 animate-on-scroll"
+        >
+          <div
+            class="w-16 h-16 md:w-[80px] md:h-[80px] bg-aim-blue text-white rounded-full flex items-center justify-center font-bold text-xs md:text-sm text-center leading-tight flex-shrink-0 mx-auto md:mx-0"
+          >
+            Day 5
+          </div>
+          <div class="bg-white p-4 md:p-6 rounded-2xl card-shadow flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-aim-blue mb-3">
+              Reflections &amp; Future Horizons
+            </h3>
+            <ul class="list-none pl-0 space-y-2">
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Honoring Resilience:</strong> A moving morning visit to
                 the Warsaw Uprising Museum.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Crowning Achievements:</strong> Emotional closing
                 speeches and the Youthpass Certificate Awarding Ceremony.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Digital Legacy:</strong> Strategy session for launching
                 our joint Instagram awareness campaign.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Royal Promenade:</strong> A peaceful, reflective walk
                 through the stunning Royal Park.
               </li>
-              <li>
+              <li
+                class="relative pl-5 text-gray-600 before:content-['•'] before:text-aim-orange before:font-bold before:absolute before:left-0 before:text-lg"
+              >
                 <strong>Farewell Gala:</strong> A final celebratory dinner
                 filled with memories, laughter, and promises to reunite.
               </li>
@@ -190,93 +254,68 @@
         </div>
       </div>
 
-      <!-- Outputs Summary -->
+      <!-- Outputs -->
       <section
-        id="outputs-summary"
-        class="animate-on-scroll"
-        style="
-          margin-top: 4rem;
-          background: linear-gradient(135deg, #f0f4f8, #e1e8f0);
-          padding: 3rem 2rem;
-          border-radius: 15px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        "
+        class="animate-on-scroll bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-12 rounded-2xl card-shadow mt-8"
       >
         <h3
-          style="
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            color: var(--color-blue);
-          "
+          class="text-center text-2xl md:text-3xl font-bold text-aim-blue mb-4"
         >
           The Fruits of Our Labor
         </h3>
-        <p style="text-align: center; margin-bottom: 2rem; color: #555">
+        <p class="text-center text-gray-600 mb-6">
           Through intense collaboration and boundless creativity, our cohort
           produced an incredible portfolio of digital assets.
         </p>
-        <div class="outputs-flex">
-          <span class="output-badge"
-            ><i class="fas fa-user-astronaut"></i> 24 AI Avatars</span
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <span
+            class="bg-white px-4 md:px-6 py-2 md:py-3 rounded-full shadow-md flex items-center gap-2 font-semibold text-sm md:text-base"
+            ><i class="fas fa-user-astronaut text-aim-orange"></i> 24 AI
+            Avatars</span
           >
-          <span class="output-badge"
-            ><i class="fas fa-film"></i> 4 AI Videos</span
+          <span
+            class="bg-white px-4 md:px-6 py-2 md:py-3 rounded-full shadow-md flex items-center gap-2 font-semibold text-sm md:text-base"
+            ><i class="fas fa-film text-aim-orange"></i> 4 AI Videos</span
           >
-          <span class="output-badge"
-            ><i class="fab fa-instagram"></i> 40 Viral Posts</span
+          <span
+            class="bg-white px-4 md:px-6 py-2 md:py-3 rounded-full shadow-md flex items-center gap-2 font-semibold text-sm md:text-base"
+            ><i class="fab fa-instagram text-aim-orange"></i> 40 Viral
+            Posts</span
           >
-          <span class="output-badge"
-            ><i class="fas fa-video"></i> Final AI Movie</span
+          <span
+            class="bg-white px-4 md:px-6 py-2 md:py-3 rounded-full shadow-md flex items-center gap-2 font-semibold text-sm md:text-base"
+            ><i class="fas fa-video text-aim-orange"></i> Final AI Movie</span
           >
-          <span class="output-badge"
-            ><i class="fas fa-award"></i> Youthpass Certified</span
+          <span
+            class="bg-white px-4 md:px-6 py-2 md:py-3 rounded-full shadow-md flex items-center gap-2 font-semibold text-sm md:text-base"
+            ><i class="fas fa-award text-aim-orange"></i> Youthpass
+            Certified</span
           >
         </div>
       </section>
     </div>
 
-    <!-- Footer with Legal & Partners -->
-    <footer>
-      <div class="footer-content">
-             <!-- Legal Links -->
-        <!-- Legal Text Blocks (Hidden by default or shown as accordion in real implementation, shown here for content) -->
-        <div
-          class="legal-text"
-          style="
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-          "
-        >
-          <p id="privacy">
-            <strong>Privacy Policy:</strong> We respect your privacy. Data is
-            processed securely for communication and project activities only.
-            Never shared without consent.
-          </p>
-          <p id="gdpr">
-            <strong>GDPR Compliance:</strong> In accordance with (EU) 2016/679.
-            You have the right to access, correct, or delete your data.
-          </p>
-          <p id="imprint">
-            <strong>Imprint:</strong> AIM Journey – AI and the Migration
-            Journey. Coord: Phönix in Niederösterreich. Partner: Fundacja
-            Mevlana. Web: www.aim-journey.eu | Email: aimjourney@phoenixnoe.at
-          </p>
-        </div>
+    <app-footer></app-footer>
 
-        <div class="erasmus-disclaimer">
-          <p class="disclaimer-text">
-            Funded by the European Union. Views and opinions expressed are those
-            of the author(s) only and do not necessarily reflect those of the
-            European Union or the National Agency.
-          </p>
-        </div>
-        <p class="copyright">&copy; 2026 AIM Journey</p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+    <script src="components/Navbar.js"></script>
+    <script src="components/Footer.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        document
+          .querySelectorAll(".animate-on-scroll")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
   </body>
 </html>

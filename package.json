@@ -1,0 +1,12 @@
+{
+  "name": "aim-journey",
+  "version": "1.0.0",
+  "description": "AIM Journey - AI and Migration Youth Exchange Project",
+  "scripts": {
+    "build:css": "tailwindcss -i ./styles.css -o ./dist/output.css --minify",
+    "watch:css": "tailwindcss -i ./styles.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
