@@ -9,12 +9,10 @@ class LeaderCard extends HTMLElement {
     const icon = this.getAttribute("icon") || "fa-user-tie";
 
     this.innerHTML = `
-      <div class="bg-white p-4 md:p-6 rounded-2xl text-center card-shadow border-t-4 border-aim-dark">
-        <div class="text-3xl md:text-4xl text-aim-blue mb-3">
-          <i class="fas ${icon}"></i>
-        </div>
-        <h3 class="text-xl md:text-2xl font-bold text-aim-dark">${name}</h3>
-        <p class="text-sm md:text-base text-gray-600 font-semibold">${role}</p>
+      <div class="leader-card">
+        <i class="fas ${icon}"></i>
+        <h4>${name}</h4>
+        <div class="role">${role}</div>
       </div>
     `;
   }

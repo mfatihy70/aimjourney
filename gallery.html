@@ -9,23 +9,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <app-navbar page="gallery"></app-navbar>
 
-    <div class="container-custom">
+    <main class="container py-5">
       <h2 class="animate-on-scroll">Story Gallery</h2>
-      <p class="text-center text-gray-600 mb-6">
+      <p class="text-center text-muted mb-4">
         Explore the AI Avatars and Stories created by our participants.
       </p>
-      <div
-        id="gallery-container"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
-      >
+      <div id="gallery-container" class="grid-3">
         <!-- Cards injected via JS -->
       </div>
-    </div>
+    </main>
 
     <app-footer></app-footer>
 
@@ -44,12 +41,11 @@
           const card = document.createElement("gallery-card");
           card.setAttribute("num", num);
           card.setAttribute("title", `Participant ${num}`);
-          card.className = `animate-on-scroll`;
+          card.className = "animate-on-scroll";
           card.style.transitionDelay = `${index * 0.05}s`;
           container.appendChild(card);
         });
 
-        // Observer for animations
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -66,5 +62,6 @@
           .forEach((el) => observer.observe(el));
       });
     </script>
+    <script src="script.js"></script>
   </body>
 </html>

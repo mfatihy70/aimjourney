@@ -9,20 +9,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <app-navbar page="quotes"></app-navbar>
 
-    <div class="container-custom">
+    <main class="container py-5">
       <h2 class="animate-on-scroll">Participant Voices</h2>
-      <div
-        id="quotes-container"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
-      >
+      <div id="quotes-container" class="grid-3">
         <!-- Quotes injected via JS -->
       </div>
-    </div>
+    </main>
 
     <app-footer></app-footer>
 
@@ -41,10 +38,10 @@
             const day = Number(dayKey);
             const quotes = quoteData[dayKey];
 
-            const dayHeader = document.createElement("div");
-            dayHeader.className = "col-span-full mt-4";
-            dayHeader.innerHTML = `<h3 class="text-xl md:text-2xl font-bold text-aim-blue border-b-2 border-aim-orange inline-block pb-2">Day ${day}</h3>`;
-            quotesContainer.appendChild(dayHeader);
+            const header = document.createElement("div");
+            header.style.cssText = "grid-column:1/-1;margin-top:1rem;";
+            header.innerHTML = `<h3 class="text-primary border-bottom" style="border-bottom:2px solid var(--color-orange);display:inline-block;padding-bottom:0.5rem;">Day ${day}</h3>`;
+            quotesContainer.appendChild(header);
 
             quotes.forEach((quote) => {
               const card = document.createElement("quote-card");
@@ -72,5 +69,6 @@
           .forEach((el) => observer.observe(el));
       });
     </script>
+    <script src="script.js"></script>
   </body>
 </html>
