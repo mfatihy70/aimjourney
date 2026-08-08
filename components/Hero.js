@@ -10,7 +10,7 @@ class AppHero extends HTMLElement {
       "Together for Tomorrow: Young Voices of Integration";
     const desc =
       this.getAttribute("desc") ||
-      "An Erasmus+ KA152 Youth Exchange project uniting young minds from Austria and Poland to explore AI, migration, and digital storytelling.";
+      "An Erasmus+ Youth Exchange project uniting young minds from Austria and Poland to explore AI, migration, and digital storytelling.";
     const imgSrc = this.getAttribute("img") || "content/images/train.png";
 
     this.innerHTML = `
